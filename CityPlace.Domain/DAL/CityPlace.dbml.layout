@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.625" name="CityPlace">
+  <DataContextMoniker Name="/CityPlaceDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6ba25ea4-53c9-47c4-9121-9757e9995460" absoluteBounds="6.75, 1.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/CityPlaceDataContext/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8b11cc1-841b-45ce-9493-155545423917" absoluteBounds="6.765, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d3e3191c-469c-4767-b16b-d44d6d942da8" absoluteBounds="3.5, 5.25, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/CityPlaceDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5a9c194-365b-44f9-927b-ac7d0b08caad" absoluteBounds="3.515, 5.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cbd4bbb0-9fbb-4902-90bd-32c7a25b61a7" absoluteBounds="6.75, 4.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/CityPlaceDataContext/MailNotificationMessage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ccce818-6c2d-4b78-9e0c-c2d872af3296" absoluteBounds="6.765, 4.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8b16857-bb23-4015-824e-8ebfe4711f3b" absoluteBounds="0.75, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CityPlaceDataContext/Permission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8382f98-48af-4d47-bc62-1607e87f9928" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="72232748-fb78-4496-9d76-68f59b932642" absoluteBounds="3.5, 2.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CityPlaceDataContext/RolePermission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7881a605-d78c-43d0-b494-7767a77315fa" absoluteBounds="3.515, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="859eb55a-14d9-4115-b4f6-aa194c00d1c4" absoluteBounds="0.75, 3.5, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/CityPlaceDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d3761e5-a806-40a5-aa2a-748ed7098b76" absoluteBounds="0.765, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be728457-665b-4785-b3a0-a651f25ea3fa" absoluteBounds="6.75, 7.375, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/CityPlaceDataContext/SMSNotificationMessage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c9e318c-eef4-4811-b781-118f5d621271" absoluteBounds="6.765, 7.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.44314697265625); (4.5 : 1.44314697265625); (4.5 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CityPlaceDataContext/Permission/Permission_RolePermission" />
+      <nodes>
+        <classShapeMoniker Id="a8b16857-bb23-4015-824e-8ebfe4711f3b" />
+        <classShapeMoniker Id="72232748-fb78-4496-9d76-68f59b932642" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 5.4631982421875); (1.75 : 6.9151030390625); (3.5 : 6.9151030390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CityPlaceDataContext/Role/Role_User" />
+      <nodes>
+        <classShapeMoniker Id="859eb55a-14d9-4115-b4f6-aa194c00d1c4" />
+        <classShapeMoniker Id="d3e3191c-469c-4767-b16b-d44d6d942da8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.85179768880208); (3.5 : 3.85179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CityPlaceDataContext/Role/Role_RolePermission" />
+      <nodes>
+        <classShapeMoniker Id="859eb55a-14d9-4115-b4f6-aa194c00d1c4" />
+        <classShapeMoniker Id="72232748-fb78-4496-9d76-68f59b932642" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

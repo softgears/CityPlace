@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29CD5ECF-259A-4941-8F54-735D04FE1C65}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CityPlace.Domain</RootNamespace>
+    <AssemblyName>CityPlace.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc4.3.1.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\CityPlace.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CityPlace.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="DAL\Repositories\BaseRepository.cs" />
+    <Compile Include="DAL\Repositories\MailNotificationMessagesRepository.cs" />
+    <Compile Include="DAL\Repositories\PermissionsRepository.cs" />
+    <Compile Include="DAL\Repositories\RolesRepository.cs" />
+    <Compile Include="DAL\Repositories\UsersRepository.cs" />
+    <Compile Include="Entities\Permission.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Enums\EnumDescriptionAttribute.cs" />
+    <Compile Include="Enums\EnumUtils.cs" />
+    <Compile Include="Enums\UserStatus.cs" />
+    <Compile Include="Interfaces\Cache\IStringCache.cs" />
+    <Compile Include="Interfaces\Notifications\IMailNotificationManager.cs" />
+    <Compile Include="Interfaces\Notifications\ISMSNotificationManager.cs" />
+    <Compile Include="Interfaces\Notifications\IUINotificationManager.cs" />
+    <Compile Include="Interfaces\Repositories\IBaseRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IMailNotificationMessagesRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPermissionsRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRolesRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUsersRepository.cs" />
+    <Compile Include="IoC\Locator.cs" />
+    <Compile Include="Notifications\Mailing\MailConnectionString.cs" />
+    <Compile Include="Notifications\Mailing\MailNotificationManager.cs" />
+    <Compile Include="Notifications\Mailing\UniSenderMailNotificationManager.cs" />
+    <Compile Include="Notifications\Templates\BaseTemplate.cs" />
+    <Compile Include="Notifications\Templates\FileTemplate.cs" />
+    <Compile Include="Notifications\Templates\ParametrizedFileTemplate.cs" />
+    <Compile Include="Notifications\Templates\ParametrizedTemplate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Routing\RouteAttribute.cs" />
+    <Compile Include="Routing\RoutesManager.cs" />
+    <Compile Include="Utils\DictionaryStringCache.cs" />
+    <Compile Include="Utils\DomainLayer.cs" />
+    <Compile Include="Utils\DynamicJsonObject.cs" />
+    <Compile Include="Utils\PasswordUtils.cs" />
+    <Compile Include="Utils\RusNumbers.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
+    <Compile Include="Utils\Transliteration.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DAL\CityPlace.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CityPlace.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAL\CityPlace.dbml.layout">
+      <DependentUpon>CityPlace.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
