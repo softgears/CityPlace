@@ -125,11 +125,13 @@
     <Compile Include="Classes\Notifications\UI\UINotificationItem.cs" />
     <Compile Include="Classes\Notifications\UI\UINotificationManager.cs" />
     <Compile Include="Classes\Security\AuthorizationCheckAttribute.cs" />
+    <Compile Include="Classes\Utils\ImageHelper.cs" />
     <Compile Include="Classes\Utils\MathUtils.cs" />
     <Compile Include="Classes\WebLayer.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\ManageCategoriesController.cs" />
     <Compile Include="Controllers\ManageRolesController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1185,6 +1187,12 @@
     <Content Include="Content\genyx\php\elFinderVolumeMySQL.class.php" />
     <Content Include="Content\genyx\php\mime.types" />
     <Content Include="Content\genyx\php\upload.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ManageCategories\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ManageCategories\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

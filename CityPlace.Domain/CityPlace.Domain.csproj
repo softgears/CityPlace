@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="DAL\Repositories\BaseRepository.cs" />
+    <Compile Include="DAL\Repositories\CategoriesRepository.cs" />
     <Compile Include="DAL\Repositories\MailNotificationMessagesRepository.cs" />
     <Compile Include="DAL\Repositories\PermissionsRepository.cs" />
     <Compile Include="DAL\Repositories\RolesRepository.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Interfaces\Notifications\ISMSNotificationManager.cs" />
     <Compile Include="Interfaces\Notifications\IUINotificationManager.cs" />
     <Compile Include="Interfaces\Repositories\IBaseRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICategoriesRepository.cs" />
     <Compile Include="Interfaces\Repositories\IMailNotificationMessagesRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPermissionsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRolesRepository.cs" />

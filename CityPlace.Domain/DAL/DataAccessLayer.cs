@@ -35,6 +35,7 @@ namespace CityPlace.Domain.DAL
             builder.RegisterType<PermissionsRepository>().As<IPermissionsRepository>();
             builder.RegisterType<RolesRepository>().As<IRolesRepository>();
             builder.RegisterType<MailNotificationMessagesRepository>().As<IMailNotificationMessagesRepository>();
+            builder.RegisterType<CategoriesRepository>().As<ICategoriesRepository>();
         }
     }
 }
