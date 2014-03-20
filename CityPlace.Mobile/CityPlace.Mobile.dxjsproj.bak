@@ -50,8 +50,8 @@
     <Content Include="js\dx.chartjs.debug.js" />
     <Content Include="js\globalize.js" />
     <Content Include="js\globalize.min.js" />
-    <Content Include="js\jquery-1.10.2.min.js" />
-    <Content Include="js\knockout-3.0.0.js" />
+    <Content Include="js\jquery-1.9.1.min.js" />
+    <Content Include="js\knockout-2.2.1.js" />
     <Content Include="views\events\events.dxview">
       <SubType>Content</SubType>
     </Content>

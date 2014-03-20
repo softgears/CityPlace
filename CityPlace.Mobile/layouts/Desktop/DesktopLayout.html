@@ -7,24 +7,18 @@
         </div>
         <div class="main-menu">
             <div class="wrapper">
-                <nav id="navBar" data-bind="dxNavBar: { }" data-options="dxCommandContainer : { locations: [{'name':'navigation'}] } " ></nav>
+                <nav id="navBar" data-bind="dxNavBar: {}" data-options="dxCommandContainer : { id: 'global-navigation', contentCssPosition: 'static' }" ></nav>
             </div>
         </div>
         <div class="toolbar">
-            <div class="wrapper">
-                <div data-bind="dxToolbar: { items: [{ text: title, align: 'left' }]}"
-                    data-options="dxCommandContainer : { locations: [
-                        {'name':'create','showIcon':false,'align':'right'},
-                        {'name':'edit','showIcon':false,'align':'right'},
-                        {'name':'save','showIcon':false,'align':'right'},
-                        {'name':'delete','showIcon':false,'align':'right','defaultCommandOptions':{'type':'danger'}},
-                        {'name':'cancel','showIcon':false,'align':'right'}] } " >
+            <div class="wrapper" data-options="dxContentPlaceholder : { name: 'header', contentCssPosition: 'static' } " >
+                <div data-bind="dxToolbar: { items: [{ text: title, location: 'left' }]}" data-options="dxCommandContainer : { id: 'desktop-toolbar' }">
                 </div>
             </div>
         </div>
         <div class="wrapper">
             <div class="content-wrapper">
-                <div class="content" data-options="dxContentPlaceholder : { name: 'content' } " ></div>
+                <div class="content" data-options="dxContentPlaceholder : { name: 'content', contentCssPosition: 'static' } " ></div>
             </div>
 
             <div class="footer-gap"></div>

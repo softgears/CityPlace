@@ -9,8 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- Framework -->
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/knockout-3.0.0.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/knockout-2.2.1.js"></script>
     <script type="text/javascript" src="js/globalize.js"></script>
 
     <script type="text/javascript" src="js/dx.all.js"></script>
