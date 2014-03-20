@@ -1,0 +1,9 @@
+<div data-options="dxView : { name: 'events', title: 'Мероприятия' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxList: { items: eventsArray, grouped: true }">
+            <div data-bind="dxAction: '#eventDetails/{key}'" data-options="dxTemplate : { name: 'item' } ">
+                <div data-bind="text: title"></div>
+            </div>
+        </div>
+    </div>
+</div>

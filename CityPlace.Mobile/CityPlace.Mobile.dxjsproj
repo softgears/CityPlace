@@ -52,6 +52,12 @@
     <Content Include="js\globalize.min.js" />
     <Content Include="js\jquery-1.9.1.min.js" />
     <Content Include="js\knockout-2.2.1.js" />
+    <Content Include="views\events\events.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\events\events.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\home.dxview" />
     <Content Include="views\home.css" />
     <Content Include="views\home.js" />
@@ -68,6 +74,7 @@
     <Folder Include="layouts\Navbar\" />
     <Folder Include="layouts\SlideOut\" />
     <Folder Include="views\" />
+    <Folder Include="views\events" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <Target Name="Build">
