@@ -132,6 +132,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ManageCategoriesController.cs" />
+    <Compile Include="Controllers\ManagePlacesController.cs" />
     <Compile Include="Controllers\ManageRolesController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1193,6 +1194,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ManageCategories\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ManagePlaces\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ManagePlaces\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ManagePlaces\Events.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ManagePlaces\EditEvent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ManagePlaces\Products.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ManagePlaces\EditProduct.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\LocalFS.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

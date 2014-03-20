@@ -1,0 +1,82 @@
+﻿@using CityPlace.Web.Classes.Ext
+@model System.Collections.Generic.List<CityPlace.Domain.Entities.Place>
+
+@{
+    ViewBag.Title = "Список заведений";
+    Layout = "../Shared/AccountLayout.cshtml";
+}
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="icon"><i class="icon20 i-cabinet"></i></div>
+            <h4>Заведения</h4>
+            <a href="#" class="minimize"></a>
+        </div>
+        <!-- End .panel-heading -->
+
+        <div class="panel-body">
+            <p>
+                <a href="/places/add" class="btn btn-primary tip" title="Создать новое заведение">Добавить заведение</a>
+            </p>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>ИД</th>
+                        <th>Название</th>
+                        <th>Город</th>
+                        <th>Категория</th>
+                        <th>Адрес</th>
+                        <th>Создано</th>
+                        <th>Отредактировано</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="8">Нет заведений в системе</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var place in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @place.Id
+                                </td>
+                                <td>
+                                    @place.Title
+                                </td>
+                                <td>
+                                    @place.City.Name
+                                </td>
+                                <td>
+                                    @place.Category.Title
+                                </td>
+                                <td>
+                                    @place.Address
+                                </td>
+                                <td>
+                                    <span class="tip" title="@place.DateCreated.FormatDateTime()">@place.DateCreated.TimeAgo()</span>
+                                </td>
+                                <td>
+                                    <span class="tip" title="@place.DateModified.FormatDateTime()">@place.DateModified.TimeAgo()</span>
+                                </td>
+                                <td style="width: 170px">
+                                    <a href="/places/@place.Id/events" class="btn btn-xs btn-success tip" title="Мероприятия и события"><i class="i-balloon"></i></a>
+                                    <a href="/places/@place.Id/products" class="btn btn-xs btn-info tip" title="Товары и услуги"><i class="i-cart-3"></i></a>
+                                    <a href="/places/@place.Id/edit" class="btn btn-xs btn-warning tip" title="Редактировать заведение"><i class="i-enter"></i></a>
+                                    <a href="/places/@place.Id/delete" class="btn btn-xs btn-danger tip" onclick="return confirm ('Вы действительно хотите удалить указанное заведение?')" title="Удалить заведение"><i class="i-remove"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- End .panel-body -->
+    </div>
+</div>

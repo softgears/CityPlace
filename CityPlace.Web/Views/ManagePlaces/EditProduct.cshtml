@@ -1,0 +1,107 @@
+﻿@using CityPlace.Domain.Enums
+@model CityPlace.Domain.Entities.Product
+
+@{
+    ViewBag.Title = Model.Id <= 0 ? "Создание товара или услуги":"Редактирование товара или услуги "+Model.Title;
+    Layout = "../Shared/AccountLayout.cshtml";
+}
+
+<div class="row">
+    <form action="/places/products/save" id="product-form" role="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="hidden" name="PlaceId" value="@Model.PlaceId" />
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="icon"><i class="icon20 i-settings"></i></div>
+                <h4>Свойства товара или услуги</h4>
+                <a href="#" class="minimize"></a>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="product-title-field">Название</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Title" type="text" id="product-title-field" value="@Model.Title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="product-html-content-field">Описание</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control html" id="product-html-content-field" name="Description" style="height: 250px">@Model.Description</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="product-type-field">Тип товара</label>
+                    <div class="col-lg-10">
+                        <select name="Type" id="product-type-field">
+                            @foreach (ProductType type in Enum.GetValues(typeof (ProductType)))
+                            {
+                                var s = (short) type;
+                                <option value="@s" @(Model.Type == s ? "selected=selected":"")>@type.GetEnumMemberName()</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="product-category-field">Категория</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Category" type="text" id="product-category-field" value="@Model.Category">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Изображение</label>
+                    <div class="col-lg-10">
+                        <input type="file" name="Image" id="file" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Скрыта</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.Hidden)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="product-article-field">Артикул</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Article" type="text" id="product-article-field" value="@Model.Article">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="product-price-field">Цена</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Price" type="text" id="product-price-field" value="@Model.Price">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="product-weight-field">Вес (для блюд и товаров)</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Weight" type="text" id="product-weight-field" value="@Model.Weight">
+                    </div>
+                </div>
+                <input type="hidden" id="next-action" name="nextAction" value=""/>
+                <div class="form-group">
+                    <div class="col-lg-offset-2">
+                        <div class="pad-left15">
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                            <button type="submit" class="btn btn-success add-next">Сохранить и добавить следующий</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#product-form").validate({
+            rules: {
+                Title: {
+                    required: true,
+                    maxlength: 255
+                }
+            }
+        });
+        $(".add-next").click(function() {
+            $("#next-action").val("next");
+        });
+    });
+</script>

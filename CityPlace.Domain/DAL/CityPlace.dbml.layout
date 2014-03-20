@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.625, 9.625" name="CityPlace">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.375, 9.625" name="CityPlace">
   <DataContextMoniker Name="/CityPlaceDataContext" />
   <nestedChildShapes>
     <classShape Id="6ba25ea4-53c9-47c4-9121-9757e9995460" absoluteBounds="6.75, 1.375, 2, 1.9631982421875005">
@@ -44,7 +44,7 @@
         <elementListCompartment Id="4c9e318c-eef4-4811-b781-118f5d621271" absoluteBounds="6.765, 7.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 1.44314697265625); (4.5 : 1.44314697265625); (4.5 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.44314697265625); (4.5 : 1.44314697265625); (4.5 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CityPlaceDataContext/Permission/Permission_RolePermission" />
       <nodes>
         <classShapeMoniker Id="a8b16857-bb23-4015-824e-8ebfe4711f3b" />
@@ -65,11 +65,57 @@
         <classShapeMoniker Id="72232748-fb78-4496-9d76-68f59b932642" />
       </nodes>
     </associationConnector>
-    <classShape Id="353f637f-8951-4db0-906a-97a3898215d8" absoluteBounds="10.375, 4.375, 2, 2.1554996744791666">
+    <classShape Id="353f637f-8951-4db0-906a-97a3898215d8" absoluteBounds="9.375, 4.375, 2, 2.1554996744791666">
       <DataClassMoniker Name="/CityPlaceDataContext/Category" />
       <nestedChildShapes>
-        <elementListCompartment Id="13ce8f30-860c-4b1f-aecb-76017ebe9fdf" absoluteBounds="10.39, 4.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="13ce8f30-860c-4b1f-aecb-76017ebe9fdf" absoluteBounds="9.39, 4.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="fdc4ffeb-b0b9-4c41-bfe0-ae7d3b5fe1b3" absoluteBounds="12.125, 1.75, 2, 6.3861311848958326">
+      <DataClassMoniker Name="/CityPlaceDataContext/Place" />
+      <nestedChildShapes>
+        <elementListCompartment Id="830af435-f94c-4f42-91f9-06bac641667f" absoluteBounds="12.14, 2.21, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.375 : 5.45274983723958); (12.125 : 5.45274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CityPlaceDataContext/Category/Category_Place" />
+      <nodes>
+        <classShapeMoniker Id="353f637f-8951-4db0-906a-97a3898215d8" />
+        <classShapeMoniker Id="fdc4ffeb-b0b9-4c41-bfe0-ae7d3b5fe1b3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 2.54409912109375); (12.125 : 2.54409912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CityPlaceDataContext/City/City_Place" />
+      <nodes>
+        <classShapeMoniker Id="6ba25ea4-53c9-47c4-9121-9757e9995460" />
+        <classShapeMoniker Id="fdc4ffeb-b0b9-4c41-bfe0-ae7d3b5fe1b3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f7ab9079-d4bc-4d9b-8ea6-c6fa1cf7da53" absoluteBounds="15.125, 1.75, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/CityPlaceDataContext/Event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f83b2578-00ac-4f91-a363-67c26b329463" absoluteBounds="15.14, 2.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.125 : 3.21235270182292); (15.125 : 3.21235270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CityPlaceDataContext/Place/Place_Event" />
+      <nodes>
+        <classShapeMoniker Id="fdc4ffeb-b0b9-4c41-bfe0-ae7d3b5fe1b3" />
+        <classShapeMoniker Id="f7ab9079-d4bc-4d9b-8ea6-c6fa1cf7da53" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="09fd23d6-c768-42d9-93e5-effd47202c8d" absoluteBounds="15.125, 5.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/CityPlaceDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="202654d6-6868-4359-9ef5-f2bb94bb6fdf" absoluteBounds="15.14, 5.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.125 : 6.81806559244792); (15.125 : 6.81806559244792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CityPlaceDataContext/Place/Place_Product" />
+      <nodes>
+        <classShapeMoniker Id="fdc4ffeb-b0b9-4c41-bfe0-ae7d3b5fe1b3" />
+        <classShapeMoniker Id="09fd23d6-c768-42d9-93e5-effd47202c8d" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

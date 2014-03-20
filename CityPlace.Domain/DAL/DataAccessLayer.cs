@@ -12,6 +12,7 @@
 
 using Autofac;
 using CityPlace.Domain.DAL.Repositories;
+using CityPlace.Domain.Entities;
 using CityPlace.Domain.Interfaces.Repositories;
 
 namespace CityPlace.Domain.DAL
@@ -36,6 +37,9 @@ namespace CityPlace.Domain.DAL
             builder.RegisterType<RolesRepository>().As<IRolesRepository>();
             builder.RegisterType<MailNotificationMessagesRepository>().As<IMailNotificationMessagesRepository>();
             builder.RegisterType<CategoriesRepository>().As<ICategoriesRepository>();
+            builder.RegisterType<PlacesRepository>().As<IPlacesRepository>();
+            builder.RegisterType<EventsRepository>().As<IEventsRepository>();
+            builder.RegisterType<ProductsRepository>().As<IProductsRepository>();
         }
     }
 }

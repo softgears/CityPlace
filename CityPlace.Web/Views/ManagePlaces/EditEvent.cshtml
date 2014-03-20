@@ -1,0 +1,79 @@
+﻿@using CityPlace.Web.Classes.Ext
+@model CityPlace.Domain.Entities.Event
+
+@{
+    ViewBag.Title = Model.Id <= 0 ? "Создание события":"Редактирование события "+Model.Title;
+    Layout = "../Shared/AccountLayout.cshtml";
+}
+
+
+<div class="row">
+    <form action="/places/events/save" id="event-form" role="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="hidden" name="PlaceId" value="@Model.PlaceId" />
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="icon"><i class="icon20 i-settings"></i></div>
+                <h4>Свойства события</h4>
+                <a href="#" class="minimize"></a>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="event-title-field">Название</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Title" type="text" id="event-title-field" value="@Model.Title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="event-html-content-field">Описание</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control html" id="event-html-content-field" name="Description" style="height: 250px">@Model.Description</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Изображение</label>
+                    <div class="col-lg-10">
+                        <input type="file" name="Image" id="file" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Скрыта</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.Hidden)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="event-sd-field">Дата и время начала</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="StartDateTime" type="text" id="event-sd-field" value="@Model.StartDateTime.FormatDateTime()">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="event-ed-field">Дата и время завершения</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="EndDateTime" type="text" id="event-ed-field" value="@Model.EndDateTime.FormatDateTime()">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2">
+                        <div class="pad-left15">
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#event-form").validate({
+            rules: {
+                Title: {
+                    required: true,
+                    maxlength: 255
+                }
+            }
+        });
+    });
+</script>

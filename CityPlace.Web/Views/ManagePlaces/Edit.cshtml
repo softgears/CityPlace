@@ -1,0 +1,220 @@
+﻿@using CityPlace.Domain.Interfaces.Repositories
+@using CityPlace.Domain.IoC
+@model CityPlace.Domain.Entities.Place
+
+@{
+    ViewBag.Title = Model.Id <= 0 ? "Создание заведения":"Редактирование заведения "+Model.Title;
+    Layout = "../Shared/AccountLayout.cshtml";
+    var cats = Locator.GetService<ICategoriesRepository>().FindAll().OrderBy(c => c.Title).ToList();
+}
+
+<div class="row">
+    <form action="/places/save" id="place-form" role="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+        @Html.HiddenFor(m => m.Id)
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="icon"><i class="icon20 i-settings"></i></div>
+                <h4>Свойства заведения</h4>
+                <a href="#" class="minimize"></a>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-title-field">Название</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Title" type="text" id="place-title-field" value="@Model.Title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-html-content-field">Описание</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control html" id="place-html-content-field" name="Description" style="height: 250px">@Model.Description</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-city-field">Город</label>
+                    <div class="col-lg-10">
+                        <select name="CityId" id="place-city-field">
+                            <option value="1" @(Model.CityId == 1 ? "selected=selected":"")>Хабаровск</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-category-field">Категория</label>
+                    <div class="col-lg-10">
+                        <select name="CategoryId" id="place-category-field">
+                            @foreach (var category in cats)
+                            {
+                                <option value="@category.Id" @(Model.CategoryId == category.Id ? "selected=selected":"")>@category.Title</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Изображение</label>
+                    <div class="col-lg-10">
+                        <input type="file" name="Image" id="file" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Скрыта</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.Hidden)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-address-field">Адрес</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control html" id="place-address-field" name="Address" style="height: 250px">@Model.Address</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-latitude-field">Широта</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Latitude" type="text" id="place-latitude-field" value="@Model.Latitude">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-longitude-field">Долгота</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Longitude" type="text" id="place-longitude-field" value="@Model.Longitude">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-wt-field">Время работы</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control html" id="place-wt-field" name="WorkTime" style="height: 250px">@Model.WorkTime</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-p1-field">Телефон 1</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Phone1" type="text" id="place-p1-field" value="@Model.Phone1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-p2-field">Телефон 2</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Phone2" type="text" id="place-p2-field" value="@Model.Phone2">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-p3-field">Телефон 3</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Phone3" type="text" id="place-p3-field" value="@Model.Phone3">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-fax-field">Факс</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Fax" type="text" id="place-fax-field" value="@Model.Fax">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-email-field">Факс</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Email" type="text" id="place-email-field" value="@Model.Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-site-field">Сайт</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Site" type="text" id="place-site-field" value="@Model.Site">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Наличный рассчет</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.CashPayments)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Безналичный рассчет</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.CashlessPayments)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Wi-Fi</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.WiFi)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Бронирование мест/столов</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.Booking)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Заказ продуктов/блюд/товаров</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.Ordering)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-check-field">Средний чек</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="AverageCheck" type="text" id="place-check-field" value="@Model.AverageCheck">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">VIP ложа</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.VIPSection)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Живая музыка</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.LiveMusic)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Комната для курения</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.SmokingRoom)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Бизнес ланч</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.BusinessLunch)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2">
+                        <div class="pad-left15">
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#place-form").validate({
+            rules: {
+                Title: {
+                    required: true,
+                    maxlength: 255
+                },
+                Description: {
+                    required: true,
+                    maxlength: 4000
+                },
+                WorkTime: {
+                    required: true,
+                    maxlength: 255
+                },
+                Phone1: {
+                    required: true
+                },
+                Email: {
+                    email: true
+                }
+            }
+        });
+    });
+</script>

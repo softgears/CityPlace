@@ -1,0 +1,78 @@
+﻿@using CityPlace.Domain.Entities
+@using CityPlace.Web.Classes.Ext
+@model System.Collections.Generic.List<CityPlace.Domain.Entities.Event>
+
+@{
+    Place place = ViewBag.place;
+    ViewBag.Title = "События в заведении "+place.Title;
+    Layout = "../Shared/AccountLayout.cshtml";
+}
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="icon"><i class="icon20 i-cabinet"></i></div>
+            <h4>События</h4>
+            <a href="#" class="minimize"></a>
+        </div>
+        <!-- End .panel-heading -->
+
+        <div class="panel-body">
+            <p>
+                <a href="/places/events/add/@place.Id" class="btn btn-primary tip" title="Создать новое событие">Добавить событие</a>
+            </p>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>ИД</th>
+                        <th>Название</th>
+                        <th>Начало</th>
+                        <th>Завершение</th>
+                        <th>Создано</th>
+                        <th>Отредактировано</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="7">Нет событий для этого заведения</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var placeEvent in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @placeEvent.Id
+                                </td>
+                                <td>
+                                    @placeEvent.Title
+                                </td>
+                                <td>
+                                    @placeEvent.StartDateTime.FormatDateTime()
+                                </td>
+                                <td>
+                                    @placeEvent.EndDateTime.FormatDateTime()
+                                </td>
+                                <td>
+                                    <span class="tip" title="@placeEvent.DateCreated.FormatDateTime()">@placeEvent.DateCreated.TimeAgo()</span>
+                                </td>
+                                <td>
+                                    <span class="tip" title="@placeEvent.DateModified.FormatDateTime()">@placeEvent.DateModified.TimeAgo()</span>
+                                </td>
+                                <td style="width: 90px">
+                                    <a href="/places/events/@placeEvent.Id/edit" class="btn btn-xs btn-warning tip" title="Редактировать событие"><i class="i-enter"></i></a>
+                                    <a href="/places/events/@placeEvent.Id/delete" class="btn btn-xs btn-danger tip" onclick="return confirm ('Вы действительно хотите удалить указанное событие?')" title="Удалить событие"><i class="i-remove"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- End .panel-body -->
+    </div>
+</div>

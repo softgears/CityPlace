@@ -60,11 +60,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CityPlace.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DAL\CityPlaceDataContext.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="DAL\Repositories\BaseRepository.cs" />
     <Compile Include="DAL\Repositories\CategoriesRepository.cs" />
+    <Compile Include="DAL\Repositories\EventsRepository.cs" />
     <Compile Include="DAL\Repositories\MailNotificationMessagesRepository.cs" />
     <Compile Include="DAL\Repositories\PermissionsRepository.cs" />
+    <Compile Include="DAL\Repositories\PlacesRepository.cs" />
+    <Compile Include="DAL\Repositories\ProductsRepository.cs" />
     <Compile Include="DAL\Repositories\RolesRepository.cs" />
     <Compile Include="DAL\Repositories\UsersRepository.cs" />
     <Compile Include="Entities\Permission.cs" />
@@ -72,6 +76,7 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\EnumDescriptionAttribute.cs" />
     <Compile Include="Enums\EnumUtils.cs" />
+    <Compile Include="Enums\ProductType.cs" />
     <Compile Include="Enums\UserStatus.cs" />
     <Compile Include="Interfaces\Cache\IStringCache.cs" />
     <Compile Include="Interfaces\Notifications\IMailNotificationManager.cs" />
@@ -79,8 +84,11 @@
     <Compile Include="Interfaces\Notifications\IUINotificationManager.cs" />
     <Compile Include="Interfaces\Repositories\IBaseRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriesRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEventsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IMailNotificationMessagesRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPermissionsRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPlacesRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IProductsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRolesRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUsersRepository.cs" />
     <Compile Include="IoC\Locator.cs" />
