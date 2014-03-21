@@ -52,6 +52,12 @@
     <Content Include="js\globalize.min.js" />
     <Content Include="js\jquery-1.10.2.min.js" />
     <Content Include="js\knockout-3.0.0.js" />
+    <Content Include="views\categories\categories.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\categories\categories.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\events\events.dxview">
       <SubType>Content</SubType>
     </Content>
@@ -63,6 +69,18 @@
     <Content Include="views\home.js" />
     <Content Include="views\about.html" />
     <Content Include="app.config.js" />
+    <Content Include="views\news\news.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\news\news.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\settings\settings.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\settings\settings.js">
+      <SubType>Content</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
@@ -75,6 +93,9 @@
     <Folder Include="layouts\SlideOut\" />
     <Folder Include="views\" />
     <Folder Include="views\events" />
+    <Folder Include="views\categories" />
+    <Folder Include="views\settings" />
+    <Folder Include="views\news" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <Target Name="Build">

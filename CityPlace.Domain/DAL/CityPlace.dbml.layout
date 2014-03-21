@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.375, 9.625" name="CityPlace">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.375, 11.5" name="CityPlace">
   <DataContextMoniker Name="/CityPlaceDataContext" />
   <nestedChildShapes>
     <classShape Id="6ba25ea4-53c9-47c4-9121-9757e9995460" absoluteBounds="6.75, 1.375, 2, 1.9631982421875005">
@@ -44,7 +44,7 @@
         <elementListCompartment Id="4c9e318c-eef4-4811-b781-118f5d621271" absoluteBounds="6.765, 7.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 1.44314697265625); (4.5 : 1.44314697265625); (4.5 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 1.44314697265625); (4.5 : 1.44314697265625); (4.5 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/CityPlaceDataContext/Permission/Permission_RolePermission" />
       <nodes>
         <classShapeMoniker Id="a8b16857-bb23-4015-824e-8ebfe4711f3b" />
@@ -58,7 +58,7 @@
         <classShapeMoniker Id="d3e3191c-469c-4767-b16b-d44d6d942da8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.85179768880208); (3.5 : 3.85179768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 3.85179768880208); (3.5 : 3.85179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/CityPlaceDataContext/Role/Role_RolePermission" />
       <nodes>
         <classShapeMoniker Id="859eb55a-14d9-4115-b4f6-aa194c00d1c4" />
@@ -117,5 +117,11 @@
         <classShapeMoniker Id="09fd23d6-c768-42d9-93e5-effd47202c8d" />
       </nodes>
     </associationConnector>
+    <classShape Id="b360df88-8035-413b-beea-dd16313371aa" absoluteBounds="12.125, 8.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/CityPlaceDataContext/Publication" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81690cdc-4f94-408c-ba12-dbe7be869e94" absoluteBounds="12.14, 8.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

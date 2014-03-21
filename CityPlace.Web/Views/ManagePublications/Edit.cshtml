@@ -1,0 +1,83 @@
+﻿@using CityPlace.Web.Classes.Ext
+@model CityPlace.Domain.Entities.Publication
+
+@{
+    ViewBag.Title = Model.Id <= 0 ? "Создание публикации":"Редактирование публикации "+Model.Title;
+    Layout = "../Shared/AccountLayout.cshtml";
+}
+
+<div class="row">
+    <form action="/publications/save" id="publication-form" role="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+        @Html.HiddenFor(m => m.Id)
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="icon"><i class="icon20 i-settings"></i></div>
+                <h4>Свойства категории</h4>
+                <a href="#" class="minimize"></a>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="publication-title-field">Заголовок</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Title" type="text" id="publication-title-field" value="@Model.Title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="publication-pd-field">Дата публикации</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="PublicationDate" type="text" id="publication-pd-field" value="@Model.PublicationDate.FormatDate()">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="publication-anon-field">Аннотация</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Annotation" type="text" id="publication-anon-field" value="@Model.Annotation">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="publication-html-content-field">Полное содержимое</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control html" id="publication-html-content-field" name="Content" style="height: 250px">@Model.Content</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="publication-cat-field">Категория</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Category" type="text" id="publication-cat-field" value="@Model.Category">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Изображение</label>
+                    <div class="col-lg-10">
+                        <input type="file" name="Image" id="file" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Скрыта</label>
+                    <div class="col-lg-10">
+                        @Html.CheckBoxFor(m => m.Hidden)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2">
+                        <div class="pad-left15">
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#publication-form").validate({
+            rules: {
+                Title: {
+                    required: true,
+                    maxlength: 255
+                }
+            }
+        });
+    });
+</script>

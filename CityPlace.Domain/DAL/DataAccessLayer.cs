@@ -40,6 +40,7 @@ namespace CityPlace.Domain.DAL
             builder.RegisterType<PlacesRepository>().As<IPlacesRepository>();
             builder.RegisterType<EventsRepository>().As<IEventsRepository>();
             builder.RegisterType<ProductsRepository>().As<IProductsRepository>();
+            builder.RegisterType<PublicationsRepository>().As<IPublicationsRepository>();
         }
     }
 }

@@ -69,6 +69,7 @@
     <Compile Include="DAL\Repositories\PermissionsRepository.cs" />
     <Compile Include="DAL\Repositories\PlacesRepository.cs" />
     <Compile Include="DAL\Repositories\ProductsRepository.cs" />
+    <Compile Include="DAL\Repositories\PublicationsRepository.cs" />
     <Compile Include="DAL\Repositories\RolesRepository.cs" />
     <Compile Include="DAL\Repositories\UsersRepository.cs" />
     <Compile Include="Entities\Permission.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Interfaces\Repositories\IPermissionsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPlacesRepository.cs" />
     <Compile Include="Interfaces\Repositories\IProductsRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPublicationsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRolesRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUsersRepository.cs" />
     <Compile Include="IoC\Locator.cs" />

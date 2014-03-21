@@ -126,6 +126,8 @@
     <Compile Include="Classes\Notifications\UI\UINotificationManager.cs" />
     <Compile Include="Classes\Security\AuthorizationCheckAttribute.cs" />
     <Compile Include="Classes\Utils\ImageHelper.cs" />
+    <Compile Include="Classes\Utils\JsonModelBinder.cs" />
+    <Compile Include="Classes\Utils\JsonNetResult.cs" />
     <Compile Include="Classes\Utils\MathUtils.cs" />
     <Compile Include="Classes\WebLayer.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -133,13 +135,19 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ManageCategoriesController.cs" />
     <Compile Include="Controllers\ManagePlacesController.cs" />
+    <Compile Include="Controllers\ManagePublicationsController.cs" />
     <Compile Include="Controllers\ManageRolesController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
+    <Compile Include="Controllers\MobileApiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\ChangePasswordModel.cs" />
     <Compile Include="Models\Account\LoginModel.cs" />
+    <Compile Include="Models\Api\CategoryModel.cs" />
+    <Compile Include="Models\Api\EventModel.cs" />
+    <Compile Include="Models\Api\GroupedDataItem.cs" />
+    <Compile Include="Models\Api\PublicationModel.cs" />
     <Compile Include="Models\Dashboard\DashboardModel.cs" />
     <Compile Include="Models\Dashboard\DashboardStatisticsModel.cs" />
     <Compile Include="Models\Manage\GenericListModel.cs" />
@@ -1215,6 +1223,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\LocalFS.pubxml" />
+    <Content Include="Views\ManagePublications\Index.cshtml" />
+    <Content Include="Views\ManagePublications\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

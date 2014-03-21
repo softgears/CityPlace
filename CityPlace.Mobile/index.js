@@ -10,4 +10,5 @@ $(function() {
 
     CityPlace_Mobile.app.navigate();
 
+    $.support.cors = true;
 });
