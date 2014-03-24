@@ -76,10 +76,22 @@
     <Content Include="views\home.js" />
     <Content Include="views\about.html" />
     <Content Include="app.config.js" />
+    <Content Include="views\newsDetails\newsDetails.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\newsDetails\newsDetails.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\news\news.dxview">
       <SubType>Content</SubType>
     </Content>
     <Content Include="views\news\news.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\placeDetails\placeDetails.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\placeDetails\placeDetails.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="views\places\places.dxview">
@@ -109,6 +121,8 @@
     <Folder Include="views\events" />
     <Folder Include="views\categories" />
     <Folder Include="views\eventDetails" />
+    <Folder Include="views\placeDetails" />
+    <Folder Include="views\newsDetails" />
     <Folder Include="views\places" />
     <Folder Include="views\settings" />
     <Folder Include="views\news" />

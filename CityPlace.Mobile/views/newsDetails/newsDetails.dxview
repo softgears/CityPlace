@@ -1,0 +1,9 @@
+<div data-options="dxView : { name: 'newsDetails', title: 'Новость' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxScrollView: {}" style="padding: 5px">
+            <h1 style="margin-bottom: 10px; text-align: center" data-bind="text: title"></h1>
+            Опубликовано: <span data-bind="text: pdate"></span>
+            <div style="margin-top: 15px" data-bind="html: content"></div>
+        </div>
+    </div>
+</div>

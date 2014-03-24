@@ -1,7 +1,7 @@
 <div data-options="dxView : { name: 'news', title: 'Новости города' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >        
-        <div data-bind="dxList: { dataSource: ds }">
-            <div data-options="dxTemplate : { name: 'item' } " data-bind="dxAction: '#itemDetailsViewName/{key}'">
+        <div data-bind="dxList: { dataSource: ds, noDataText: 'Нет новостей', pageLoadingText: 'Идет загрузка новостей' }">
+            <div data-options="dxTemplate : { name: 'item' } " data-bind="dxAction: '#newsDetails/{id}'">
                 <div data-bind="text: title"></div>
             </div>
         </div>

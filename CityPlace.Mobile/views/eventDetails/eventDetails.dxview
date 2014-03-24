@@ -1,10 +1,12 @@
 <div data-options="dxView : { name: 'eventDetails', title: 'eventDetails' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
-        <div style="padding: 5px">
-            <h1 data-bind="text: title" style="text-align: center"></h1>
-            Начало: <span data-bind="text: event_start"></span><br/>
-            Конец: <span data-bind="text: event_end"></span><br/>
-            <div style="margin-top: 25px" data-bind="text: description"></div>
-        </div>        
+        <div data-bind="dxScrollView: {}">
+            <div style="padding: 5px">
+                <h1 data-bind="text: title" style="text-align: center"></h1>
+                Начало: <span data-bind="text: event_start"></span><br/>
+                Конец: <span data-bind="text: event_end"></span><br/>
+                <div style="margin-top: 25px" data-bind="text: description"></div>
+            </div>        
+        </div>
     </div>
 </div>
