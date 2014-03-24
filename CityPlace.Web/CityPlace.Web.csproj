@@ -144,6 +144,7 @@
     </Compile>
     <Compile Include="Models\Account\ChangePasswordModel.cs" />
     <Compile Include="Models\Account\LoginModel.cs" />
+    <Compile Include="Models\Api\BaseJsonModel.cs" />
     <Compile Include="Models\Api\CategoryModel.cs" />
     <Compile Include="Models\Api\EventDetailsModel.cs" />
     <Compile Include="Models\Api\EventModel.cs" />

@@ -20,7 +20,7 @@ namespace CityPlace.Web.Models.Api
     /// <summary>
     /// Модель события
     /// </summary>
-    public class EventModel
+    public class EventModel: BaseJsonModel
     {
         /// <summary>
         /// Конструктор по умолчанию
@@ -32,6 +32,7 @@ namespace CityPlace.Web.Models.Api
             title = @event.Title;
             img = @event.Image;
             event_start = @event.StartDateTime.FormatDateTime();
+            objType = "event";
         }
 
         /// <summary>
@@ -43,11 +44,6 @@ namespace CityPlace.Web.Models.Api
         /// Название мероприятия
         /// </summary>
         public string title { get; set; }
-
-        /// <summary>
-        /// Идентификатор
-        /// </summary>
-        public long id { get; set; }
 
         /// <summary>
         /// Дата и время начала события

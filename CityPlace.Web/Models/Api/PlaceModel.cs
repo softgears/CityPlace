@@ -17,13 +17,8 @@ namespace CityPlace.Web.Models.Api
     /// <summary>
     /// JSOn модель заведения для API
     /// </summary>
-    public class PlaceModel
+    public class PlaceModel: BaseJsonModel
     {
-        /// <summary>
-        /// Идентификтаор
-        /// </summary>
-        public long id { get; set; }
-
         /// <summary>
         /// Заголовок
         /// </summary>
@@ -48,6 +43,7 @@ namespace CityPlace.Web.Models.Api
             title = model.Title;
             address = model.Address;
             img = model.Image;
+            objType = "place";
         }
     }
 }

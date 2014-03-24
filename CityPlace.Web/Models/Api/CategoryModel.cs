@@ -17,7 +17,7 @@ namespace CityPlace.Web.Models.Api
     /// <summary>
     /// Модель категории
     /// </summary>
-    public class CategoryModel
+    public class CategoryModel: BaseJsonModel
     {
         /// <summary>
         /// Конструктор по умолчанию
@@ -28,6 +28,7 @@ namespace CityPlace.Web.Models.Api
             id = category.Id;
             title = category.Title;
             img = category.Image;
+            objType = "category";
         }
 
         /// <summary>
@@ -39,10 +40,5 @@ namespace CityPlace.Web.Models.Api
         /// Название мероприятия
         /// </summary>
         public string title { get; set; }
-
-        /// <summary>
-        /// Идентификатор
-        /// </summary>
-        public long id { get; set; }
     }
 }

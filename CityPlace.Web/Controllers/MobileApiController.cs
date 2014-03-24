@@ -77,6 +77,15 @@ namespace CityPlace.Web.Controllers
                             .OrderByDescending(p => p.PublicationDate)
                             .Take(5).Select(p => new PublicationModel(p))
                             .ToList()
+                },
+                new GroupedDataItem()
+                {
+                    key = "Последние заведения",
+                    items =
+                        PlacesRepository.Search(p => !p.Hidden)
+                            .OrderByDescending(p => p.DateModified).ThenBy(p => p.DateCreated)
+                            .Take(5).Select(p => new PlaceModel(p))
+                            .ToList()
                 }
             };
             return Json(result,JsonRequestBehavior.AllowGet);

@@ -19,7 +19,7 @@ namespace CityPlace.Web.Models.Api
     /// <summary>
     /// Модель публикации
     /// </summary>
-    public class PublicationModel
+    public class PublicationModel: BaseJsonModel
     {
         /// <summary>
         /// Стандартный конструктор
@@ -32,6 +32,7 @@ namespace CityPlace.Web.Models.Api
             img = publication.Image;
             annotation = publication.Annotation;
             pdate = publication.PublicationDate.FormatDate();
+            objType = "publication";
         }
 
         /// <summary>
@@ -48,11 +49,6 @@ namespace CityPlace.Web.Models.Api
         /// Название мероприятия
         /// </summary>
         public string title { get; set; }
-
-        /// <summary>
-        /// Идентификатор
-        /// </summary>
-        public long id { get; set; }
 
         /// <summary>
         /// Дата публикации
