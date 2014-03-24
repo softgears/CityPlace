@@ -8,6 +8,7 @@
     <ApplicationPage>index.html</ApplicationPage>
     <Name>CityPlace.Mobile</Name>
     <RootNamespace>CityPlace.Mobile</RootNamespace>
+    <IpaPrivateKeyFile>certificates\ios_private_key.txt</IpaPrivateKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +59,12 @@
     <Content Include="views\categories\categories.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="views\eventDetails\eventDetails.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\eventDetails\eventDetails.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\events\events.dxview">
       <SubType>Content</SubType>
     </Content>
@@ -75,6 +82,12 @@
     <Content Include="views\news\news.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="views\places\places.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\places\places.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\settings\settings.dxview">
       <SubType>Content</SubType>
     </Content>
@@ -83,6 +96,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="certificates\" />
     <Folder Include="css\" />
     <Folder Include="data\" />
     <Folder Include="js\" />
@@ -94,8 +108,14 @@
     <Folder Include="views\" />
     <Folder Include="views\events" />
     <Folder Include="views\categories" />
+    <Folder Include="views\eventDetails" />
+    <Folder Include="views\places" />
     <Folder Include="views\settings" />
     <Folder Include="views\news" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="certificates\ios_certificate_request.txt" />
+    <None Include="certificates\ios_private_key.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <Target Name="Build">

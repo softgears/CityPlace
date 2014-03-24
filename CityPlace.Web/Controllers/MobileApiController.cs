@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Http;
 using System.Web.Mvc;
+using CityPlace.Domain.Entities;
 using CityPlace.Domain.Interfaces.Repositories;
 using CityPlace.Domain.IoC;
 using CityPlace.Domain.Routing;
@@ -143,5 +144,81 @@ namespace CityPlace.Web.Controllers
             return Json(cats, JsonRequestBehavior.AllowGet);
         }
 
+        /// <summary>
+        /// Возращает все заведения в указанной категории
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [Route("mobile-api/places/{id}")]
+        public ActionResult GetPlaces(long id)
+        {
+            var cat = CategoriesRepository.Load(id);
+            if (cat == null)
+            {
+                return Json(Enumerable.Empty<PlaceModel>(),JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(cat.Places.Where(p => !p.Hidden).OrderBy(p => p.Title).Select(p => new PlaceModel(p)).ToList(),JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Возвращает подробности об указанном событии
+        /// </summary>
+        /// <param name="id">Идентификатор события</param>
+        /// <returns></returns>
+        [Route("mobile-api/event/{id}")]
+        public ActionResult GetEventInfo(long id)
+        {
+            var ev = EventsRepository.Load(id);
+            if (ev == null)
+            {
+                return Json(new EventDetailsModel(new Event()
+                {
+                    Title = "Не найдено"
+                }), JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new EventDetailsModel(ev), JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Возвращает подробности об указанной новости
+        /// </summary>
+        /// <param name="id">Идентификатор новости</param>
+        /// <returns></returns>
+        [Route("mobile-api/publication/{id}")]
+        public ActionResult GetPublicationInfo(long id)
+        {
+            var pub = PublicationsRepository.Load(id);
+            if (pub == null)
+            {
+                return Json(new PublicationDetailsModel(new Publication()
+                {
+                    Title = "Не найдено"
+                }), JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new PublicationDetailsModel(pub), JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Возвращает подробности об указанном месте
+        /// </summary>
+        /// <param name="id">Идентификатор места</param>
+        /// <returns></returns>
+        [Route("mobile-api/place/{id}")]
+        public ActionResult GetPlaceInfo(long id)
+        {
+            var place = PlacesRepository.Load(id);
+            if (place == null)
+            {
+                return Json(new PlaceDetailsModel(new Place()
+                {
+                    Title = "Не найдено"
+                }), JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new PlaceDetailsModel(place), JsonRequestBehavior.AllowGet);
+        }
     }
 }

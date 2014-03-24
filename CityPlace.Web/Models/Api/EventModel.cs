@@ -13,6 +13,7 @@
 using System.Data.Common;
 using System.Web.UI.WebControls;
 using CityPlace.Domain.Entities;
+using CityPlace.Web.Classes.Ext;
 
 namespace CityPlace.Web.Models.Api
 {
@@ -30,6 +31,7 @@ namespace CityPlace.Web.Models.Api
             id = @event.Id;
             title = @event.Title;
             img = @event.Image;
+            event_start = @event.StartDateTime.FormatDateTime();
         }
 
         /// <summary>
@@ -46,5 +48,10 @@ namespace CityPlace.Web.Models.Api
         /// Идентификатор
         /// </summary>
         public long id { get; set; }
+
+        /// <summary>
+        /// Дата и время начала события
+        /// </summary>
+        public string event_start { get; set; }
     }
 }

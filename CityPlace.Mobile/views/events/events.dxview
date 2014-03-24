@@ -1,7 +1,7 @@
 <div data-options="dxView : { name: 'events', title: 'Мероприятия' } " >    
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div data-bind="dxList: { dataSource: ds, grouped: true }">
-            <div data-bind="dxAction: '#eventDetails/{key}'" data-options="dxTemplate : { name: 'item' } ">
+            <div data-bind="dxAction: '#eventDetails/{id}'" data-options="dxTemplate : { name: 'item' } ">
                 <div data-bind="text: title"></div>
             </div>
         </div>

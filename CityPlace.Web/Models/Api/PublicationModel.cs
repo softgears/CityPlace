@@ -12,6 +12,7 @@
 
 using System.Web.UI.WebControls;
 using CityPlace.Domain.Entities;
+using CityPlace.Web.Classes.Ext;
 
 namespace CityPlace.Web.Models.Api
 {
@@ -30,6 +31,7 @@ namespace CityPlace.Web.Models.Api
             title = publication.Title;
             img = publication.Image;
             annotation = publication.Annotation;
+            pdate = publication.PublicationDate.FormatDate();
         }
 
         /// <summary>
@@ -51,5 +53,10 @@ namespace CityPlace.Web.Models.Api
         /// Идентификатор
         /// </summary>
         public long id { get; set; }
+
+        /// <summary>
+        /// Дата публикации
+        /// </summary>
+        public string pdate { get; set; }
     }
 }
