@@ -9,6 +9,7 @@
     <Name>CityPlace.Mobile</Name>
     <RootNamespace>CityPlace.Mobile</RootNamespace>
     <IpaPrivateKeyFile>certificates\ios_private_key.txt</IpaPrivateKeyFile>
+    <KeyIpaPath>certificates\ios_certificate.p12</KeyIpaPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -19,6 +20,42 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="fonts\HelveticaNeueCyr-UltraLight.otf">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\3.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\4.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\5.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\6.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\back.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\bg.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\logo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\nav.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav\toolbar.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="index.js" />
     <Content Include="index.html" />
     <Content Include="index.css" />
@@ -53,6 +90,12 @@
     <Content Include="js\globalize.min.js" />
     <Content Include="js\jquery-1.10.2.min.js" />
     <Content Include="js\knockout-3.0.0.js" />
+    <Content Include="views\authorizeVk\authorizeVk.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\authorizeVk\authorizeVk.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\categories\categories.dxview">
       <SubType>Content</SubType>
     </Content>
@@ -111,16 +154,20 @@
     <Folder Include="certificates\" />
     <Folder Include="css\" />
     <Folder Include="data\" />
+    <Folder Include="images\nav" />
     <Folder Include="js\" />
     <Folder Include="layouts\" />
     <Folder Include="layouts\Desktop\" />
     <Folder Include="layouts\Empty\" />
     <Folder Include="layouts\Navbar\" />
     <Folder Include="layouts\SlideOut\" />
+    <Folder Include="images" />
+    <Folder Include="fonts" />
     <Folder Include="views\" />
     <Folder Include="views\events" />
     <Folder Include="views\categories" />
     <Folder Include="views\eventDetails" />
+    <Folder Include="views\authorizeVk" />
     <Folder Include="views\placeDetails" />
     <Folder Include="views\newsDetails" />
     <Folder Include="views\places" />
@@ -128,6 +175,8 @@
     <Folder Include="views\news" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="certificates\ios_certificate.cer" />
+    <None Include="certificates\ios_certificate.p12" />
     <None Include="certificates\ios_certificate_request.txt" />
     <None Include="certificates\ios_private_key.txt" />
   </ItemGroup>

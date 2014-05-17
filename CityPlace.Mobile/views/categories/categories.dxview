@@ -2,6 +2,9 @@
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div data-bind="dxList: { dataSource: ds }">
             <div data-bind="dxAction: '#places/{id}'" data-options="dxTemplate : { name: 'item' } ">
+                <div class="list-img">
+                    <img data-bind="attr: { src: 'http://cityplace.softgears.ru' + img }" />
+                </div> 
                 <div data-bind="text: title"></div>
             </div>
         </div>

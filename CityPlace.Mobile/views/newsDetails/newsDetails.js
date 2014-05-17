@@ -5,7 +5,10 @@
         title: ko.observable("Загрузка..."),
         pdate: ko.observable("Загрузка..."),
         content: ko.observable("Загрузка..."),
-        img: ko.observable("Загрузка...")
+        img: ko.observable("Загрузка..."),
+        hasImage: function() {
+            return viewModel.img() != "";
+        }
     };
     
     $.getJSON("http://cityplace.softgears.ru/mobile-api/publication/" + params.id, function (data) {

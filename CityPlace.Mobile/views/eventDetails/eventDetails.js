@@ -7,6 +7,9 @@
         img: ko.observable("Нет данных"),
         event_start: ko.observable("Нет данных"),
         event_end: ko.observable("Нет данных"),
+        hasImage: function () {
+            return viewModel.img() != "";
+        }
     };
 
     $.getJSON("http://cityplace.softgears.ru/mobile-api/event/" + params.id, function(data) {

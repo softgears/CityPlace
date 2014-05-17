@@ -1,8 +1,12 @@
 <div data-options="dxView : { name: 'placeDetails', title: 'Заведение' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div data-bind="dxScrollView: {}">
-            <h1 data-bind="text: title" style="margin-bottom: 15px; text-align: center"></h1>
-            <div data-bind="html: description" style="padding: 5px;"></div>
+            <div class="img-wrapper" data-bind="visible: hasImage()">
+                <div class="img">
+                    <img data-bind="attr: { src: 'http://cityplace.softgears.ru' + img() }" />
+                </div>                
+            </div>   
+            <div class="text-content" data-bind="html: description"></div>
             <div class="dx-fieldset">
                 <div class="dx-field">
                     <div class="dx-field-label">Адрес</div>
@@ -20,32 +24,32 @@
             <div class="dx-fieldset">
                 <div class="dx-field">
                     <div class="dx-field-label">Телефон</div>
-                    <div class="dx-field-value" data-bind="text: phone1">
-                        
+                    <div class="dx-field-value">
+                        <a data-bind="text: phone1, attr: { href: 'tel:'+phone1() }"></a>
                     </div>
                 </div>
-                <div class="dx-field">
+                <div class="dx-field" data-bind="visible: phone2() != undefined">
                     <div class="dx-field-label">Телефон</div>
-                    <div class="dx-field-value" data-bind="text: phone2, visible: phone2() != undefined">
-                        
+                    <div class="dx-field-value">
+                        <a data-bind="text: phone2, attr: { href: 'tel:' + phone2() }"></a>
                     </div>
                 </div>
-                <div class="dx-field">
+                <div class="dx-field" data-bind="visible: phone3() != undefined">
                     <div class="dx-field-label">Телефон</div>
-                    <div class="dx-field-value" data-bind="text: phone3, visible: phone3() != undefined">
-                        
+                    <div class="dx-field-value">
+                        <a data-bind="text: phone3, attr: { href: 'tel:' + phone3() }"></a>
                     </div>
                 </div>
-                <div class="dx-field">
+                <div class="dx-field" data-bind="visible: site() != undefined">
                     <div class="dx-field-label">Сайт</div>
-                    <div class="dx-field-value" data-bind="text: site, visible: site() != undefined">
-                        
+                    <div class="dx-field-value">
+                        <a data-bind="text: site, attr: {href: site}"></a>
                     </div>
                 </div>
-                <div class="dx-field">
+                <div class="dx-field" data-bind="visible: email() != undefined">
                     <div class="dx-field-label">E-mail</div>
-                    <div class="dx-field-value" data-bind="text: email, visible: email() != undefined">
-                        
+                    <div class="dx-field-value">
+                        <a data-bind="text: email, attr: { href: 'mailo:'+email() }"></a>
                     </div>
                 </div>
             </div>

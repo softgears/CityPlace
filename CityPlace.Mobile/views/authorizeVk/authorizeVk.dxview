@@ -1,0 +1,5 @@
+<div data-options="dxView : { name: 'authorizeVk', title: 'Вконтакте' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        
+    </div>
+</div>

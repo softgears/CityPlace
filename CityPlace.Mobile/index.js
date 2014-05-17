@@ -1,6 +1,10 @@
 ﻿window.CityPlace_Mobile = window.CityPlace_Mobile || {};
 
-$(function() {
+$(function () {
+    DevExpress.devices.current({
+        phone: true,
+        platform: 'generic'
+    });
     CityPlace_Mobile.app = new DevExpress.framework.html.HtmlApplication({
         namespace: CityPlace_Mobile,
         defaultLayout: CityPlace_Mobile.config.defaultLayout,

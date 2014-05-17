@@ -23,7 +23,10 @@
         vip: ko.observable(false),
         liveMusic: ko.observable(false),
         businessLunch: ko.observable(false),
-        check: ko.observable(0.0)
+        check: ko.observable(0.0),
+        hasImage: function () {
+            return viewModel.img() != "";
+        }
     };
     
     $.getJSON("http://cityplace.softgears.ru/mobile-api/place/" + params.id, function (data) {
