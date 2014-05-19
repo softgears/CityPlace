@@ -1,6 +1,6 @@
 ﻿CityPlace_Mobile.home = function (params) {
-    
-    var dataSource = new DevExpress.data.DataSource("http://cityplace.softgears.ru/mobile-api/home-data");
+    var cityId = 1;
+    var dataSource = new DevExpress.data.DataSource("http://cityplace.softgears.ru/mobile-api/home-data/"+cityId);
 
     var viewModel = {
         ds: dataSource,

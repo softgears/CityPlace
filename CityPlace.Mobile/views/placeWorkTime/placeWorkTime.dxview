@@ -1,0 +1,5 @@
+<div data-options="dxView : { name: 'placeWorkTime', title: 'Время работы' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div class="text-content" data-bind="text: info"></div>
+    </div>
+</div>

@@ -173,3 +173,8 @@ a {
     color: white;
     text-decoration: underline;
 }
+
+.dx-empty-message {
+    text-align: center;
+    margin-top: 10px;
+}

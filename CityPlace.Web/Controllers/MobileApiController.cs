@@ -40,6 +40,11 @@ namespace CityPlace.Web.Controllers
         public IPlacesRepository PlacesRepository { get; private set; }
 
         /// <summary>
+        /// Репозиторий городов
+        /// </summary>
+        public ICitiesRepository CitiesRepository { get; private set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Web.Http.ApiController"/> class.
         /// </summary>
         public MobileApiController()
@@ -48,6 +53,7 @@ namespace CityPlace.Web.Controllers
             PublicationsRepository = Locator.GetService<IPublicationsRepository>();
             CategoriesRepository = Locator.GetService<ICategoriesRepository>();
             PlacesRepository = Locator.GetService<IPlacesRepository>();
+            CitiesRepository = Locator.GetService<ICitiesRepository>();
         }
 
 
@@ -55,8 +61,8 @@ namespace CityPlace.Web.Controllers
         /// Возвращает основные данные для главной страницы
         /// </summary>
         /// <returns></returns>
-        [Route("mobile-api/home-data")]
-        public JsonResult GetHomeData()
+        [Route("mobile-api/home-data/{id}")]
+        public JsonResult GetHomeData(long id = 1)
         {
             var result = new List<GroupedDataItem>
             {
@@ -64,7 +70,7 @@ namespace CityPlace.Web.Controllers
                 {
                     key = "Мероприятия",
                     items =
-                        EventsRepository.Search(e => !e.Hidden && e.StartDateTime >= DateTime.Now.Date)
+                        EventsRepository.Search(e => e.Place.CityId == id && !e.Hidden && e.StartDateTime >= DateTime.Now.Date)
                             .OrderBy(e => e.StartDateTime)
                             .Take(5).Select(e => new EventModel(e))
                             .ToList()
@@ -82,7 +88,7 @@ namespace CityPlace.Web.Controllers
                 {
                     key = "Последние заведения",
                     items =
-                        PlacesRepository.Search(p => !p.Hidden)
+                        PlacesRepository.Search(p => !p.Hidden && p.CityId == id)
                             .OrderByDescending(p => p.DateModified).ThenBy(p => p.DateCreated)
                             .Take(5).Select(p => new PlaceModel(p))
                             .ToList()
@@ -95,11 +101,11 @@ namespace CityPlace.Web.Controllers
         /// Возвращает данные о ближайших событиях
         /// </summary>
         /// <returns></returns>
-        [Route("mobile-api/events")]
-        public JsonResult GetEvents()
+        [Route("mobile-api/events/{id}")]
+        public JsonResult GetEvents(long id = 1)
         {
             var groupedEvents =
-                EventsRepository.Search(e => !e.Hidden && e.StartDateTime >= DateTime.Now.Date)
+                EventsRepository.Search(e => e.Place.CityId == id && !e.Hidden && e.StartDateTime >= DateTime.Now.Date)
                     .GroupBy(g => g.StartDateTime.Date)
                     .OrderBy(g => g.Key)
                     .ToList();
@@ -159,7 +165,7 @@ namespace CityPlace.Web.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [Route("mobile-api/places/{id}")]
-        public ActionResult GetPlaces(long id)
+        public ActionResult GetPlaces(long id,long cityId = 1)
         {
             var cat = CategoriesRepository.Load(id);
             if (cat == null)
@@ -167,7 +173,7 @@ namespace CityPlace.Web.Controllers
                 return Json(Enumerable.Empty<PlaceModel>(),JsonRequestBehavior.AllowGet);
             }
 
-            return Json(cat.Places.Where(p => !p.Hidden).OrderBy(p => p.Title).Select(p => new PlaceModel(p)).ToList(),JsonRequestBehavior.AllowGet);
+            return Json(cat.Places.Where(p => p.CityId == cityId && !p.Hidden).OrderBy(p => p.Title).Select(p => new PlaceModel(p)).ToList(),JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>
@@ -228,6 +234,20 @@ namespace CityPlace.Web.Controllers
             }
 
             return Json(new PlaceDetailsModel(place), JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Возвращает список городов
+        /// </summary>
+        /// <returns></returns>
+        [Route("mobile-api/cities")]
+        public ActionResult GetCities()
+        {
+            var pubs = CitiesRepository.FindAll()
+                .OrderBy(p => p.Name).Select(p => new CityModel(p))
+                .ToList();
+
+            return Json(pubs, JsonRequestBehavior.AllowGet);
         }
     }
 }

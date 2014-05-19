@@ -146,6 +146,7 @@
     <Compile Include="Models\Account\LoginModel.cs" />
     <Compile Include="Models\Api\BaseJsonModel.cs" />
     <Compile Include="Models\Api\CategoryModel.cs" />
+    <Compile Include="Models\Api\CityModel.cs" />
     <Compile Include="Models\Api\EventDetailsModel.cs" />
     <Compile Include="Models\Api\EventModel.cs" />
     <Compile Include="Models\Api\GroupedDataItem.cs" />

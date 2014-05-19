@@ -13,9 +13,9 @@
         </div>
         <div class="dx-fieldset">
             <div class="dx-field">
-                <div class="dx-field-label">Push</div>
-                <div class="dx-field-value">
-                    <div data-bind="dxSwitch: { offText: 'ВЫКЛ', onText: 'ВКЛ' }"></div>
+                <div class="dx-field-label">Город</div>
+                <div class="dx-field-value" data-bind="dxAction: {view: 'selectCity'}, text: city">
+                    
                 </div>
             </div>
         </div>

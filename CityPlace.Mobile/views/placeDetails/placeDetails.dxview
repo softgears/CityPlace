@@ -10,13 +10,13 @@
             <div class="dx-fieldset">
                 <div class="dx-field">
                     <div class="dx-field-label">Адрес</div>
-                    <div class="dx-field-value" data-bind="text: address">
+                    <div class="dx-field-value" data-bind="text: address, dxAction: {view: 'placeAddress', address: address()}">
                         
                     </div>
                 </div>
                 <div class="dx-field">
                     <div class="dx-field-label">Режим работы</div>
-                    <div class="dx-field-value" data-bind="text: work_time">
+                    <div class="dx-field-value" data-bind="text: work_time, dxAction: { view: 'placeWorkTime', info: work_time() }">
                         
                     </div>
                 </div>
