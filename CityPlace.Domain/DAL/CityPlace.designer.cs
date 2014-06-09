@@ -64,6 +64,9 @@ namespace CityPlace.Domain.DAL
     partial void InsertPublication(CityPlace.Domain.Entities.Publication instance);
     partial void UpdatePublication(CityPlace.Domain.Entities.Publication instance);
     partial void DeletePublication(CityPlace.Domain.Entities.Publication instance);
+    partial void InsertDevice(CityPlace.Domain.Entities.Device instance);
+    partial void UpdateDevice(CityPlace.Domain.Entities.Device instance);
+    partial void DeleteDevice(CityPlace.Domain.Entities.Device instance);
     #endregion
 		
 		public CityPlaceDataContext(string connection) : 
@@ -183,6 +186,14 @@ namespace CityPlace.Domain.DAL
 			get
 			{
 				return this.GetTable<CityPlace.Domain.Entities.Publication>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CityPlace.Domain.Entities.Device> Devices
+		{
+			get
+			{
+				return this.GetTable<CityPlace.Domain.Entities.Device>();
 			}
 		}
 	}
@@ -3845,6 +3856,140 @@ namespace CityPlace.Domain.Entities
 					this._DateModified = value;
 					this.SendPropertyChanged("DateModified");
 					this.OnDateModifiedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Devices")]
+	public partial class Device : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _Id;
+		
+		private short _Platform;
+		
+		private string _Token;
+		
+		private System.Nullable<System.DateTime> _DateRegistred;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(long value);
+    partial void OnIdChanged();
+    partial void OnPlatformChanging(short value);
+    partial void OnPlatformChanged();
+    partial void OnTokenChanging(string value);
+    partial void OnTokenChanged();
+    partial void OnDateRegistredChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateRegistredChanged();
+    #endregion
+		
+		public Device()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Platform", DbType="SmallInt NOT NULL")]
+		public short Platform
+		{
+			get
+			{
+				return this._Platform;
+			}
+			set
+			{
+				if ((this._Platform != value))
+				{
+					this.OnPlatformChanging(value);
+					this.SendPropertyChanging();
+					this._Platform = value;
+					this.SendPropertyChanged("Platform");
+					this.OnPlatformChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Token", DbType="NVarChar(MAX)")]
+		public string Token
+		{
+			get
+			{
+				return this._Token;
+			}
+			set
+			{
+				if ((this._Token != value))
+				{
+					this.OnTokenChanging(value);
+					this.SendPropertyChanging();
+					this._Token = value;
+					this.SendPropertyChanged("Token");
+					this.OnTokenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateRegistred", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateRegistred
+		{
+			get
+			{
+				return this._DateRegistred;
+			}
+			set
+			{
+				if ((this._DateRegistred != value))
+				{
+					this.OnDateRegistredChanging(value);
+					this.SendPropertyChanging();
+					this._DateRegistred = value;
+					this.SendPropertyChanged("DateRegistred");
+					this.OnDateRegistredChanged();
 				}
 			}
 		}

@@ -65,6 +65,7 @@
     <Compile Include="DAL\Repositories\BaseRepository.cs" />
     <Compile Include="DAL\Repositories\CategoriesRepository.cs" />
     <Compile Include="DAL\Repositories\CitiesRepository.cs" />
+    <Compile Include="DAL\Repositories\DeviceRepository.cs" />
     <Compile Include="DAL\Repositories\EventsRepository.cs" />
     <Compile Include="DAL\Repositories\MailNotificationMessagesRepository.cs" />
     <Compile Include="DAL\Repositories\PermissionsRepository.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\EnumDescriptionAttribute.cs" />
     <Compile Include="Enums\EnumUtils.cs" />
+    <Compile Include="Enums\MobilePlatform.cs" />
     <Compile Include="Enums\ProductType.cs" />
     <Compile Include="Enums\UserStatus.cs" />
     <Compile Include="Interfaces\Cache\IStringCache.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Interfaces\Repositories\IBaseRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriesRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICitiesRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IDeviceRepository.cs" />
     <Compile Include="Interfaces\Repositories\IEventsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IMailNotificationMessagesRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPermissionsRepository.cs" />
@@ -115,13 +118,16 @@
     <Compile Include="Utils\DomainLayer.cs" />
     <Compile Include="Utils\DynamicJsonObject.cs" />
     <Compile Include="Utils\PasswordUtils.cs" />
+    <Compile Include="Utils\PlatformUtils.cs" />
     <Compile Include="Utils\RusNumbers.cs" />
     <Compile Include="Utils\StringUtils.cs" />
     <Compile Include="Utils\Transliteration.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DAL\CityPlace.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>CityPlace.designer.cs</LastGenOutput>

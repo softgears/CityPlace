@@ -46,6 +46,21 @@
       <HintPath>..\packages\Autofac.Mvc4.3.1.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PushSharp.Android">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.Apple">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.Apple.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.Core">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.Windows">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.WindowsPhone">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.WindowsPhone.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -116,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\IoCConfig.cs" />
+    <Compile Include="App_Start\PushConfig.cs" />
     <Compile Include="Classes\Ext\DateTimeExtensions.cs" />
     <Compile Include="Classes\Ext\DateTimeModelBinder.cs" />
     <Compile Include="Classes\Ext\DateUtils.cs" />
@@ -136,6 +152,7 @@
     <Compile Include="Controllers\ManageCategoriesController.cs" />
     <Compile Include="Controllers\ManagePlacesController.cs" />
     <Compile Include="Controllers\ManagePublicationsController.cs" />
+    <Compile Include="Controllers\ManagePushController.cs" />
     <Compile Include="Controllers\ManageRolesController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\MobileApiController.cs" />
@@ -1112,6 +1129,7 @@
     <Content Include="Content\genyx\widgets.html" />
     <Content Include="Content\images\logo-small.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="dbupdate.txt" />
     <Content Include="Global.asax" />
     <Content Include="Templates\Mail\Register.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1128,6 +1146,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\genyx\files\.quarantine\" />
+    <Folder Include="Push\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1234,6 +1253,7 @@
     <None Include="Properties\PublishProfiles\LocalFS.pubxml" />
     <Content Include="Views\ManagePublications\Index.cshtml" />
     <Content Include="Views\ManagePublications\Edit.cshtml" />
+    <Content Include="Views\ManagePush\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

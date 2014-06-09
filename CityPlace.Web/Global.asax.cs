@@ -23,6 +23,7 @@ namespace CityPlace.Web
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+	        PushConfig.InitPushServices();
         }
 
         /// <summary>

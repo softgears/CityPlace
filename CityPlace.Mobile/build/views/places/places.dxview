@@ -1,0 +1,12 @@
+<div data-options="dxView : { name: 'places', title: 'Заведения' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >        
+        <div data-bind="dxList: { dataSource: ds, noDataText: 'Нет информации о заведениях', pageLoadingText: 'Загрузка списка заведений' }">
+            <div data-bind="dxAction: '#placeDetails/{id}'" data-options="dxTemplate : { name: 'item' } ">
+                <div class="list-img">
+                    <img data-bind="attr: { src: 'http://cityplace.softgears.ru' + img }" />
+                </div> 
+                <div data-bind="text: title"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Новая PUSH рассылка";
+    Layout = "~/Views/Shared/AccountLayout.cshtml";
+}
+
+<div class="row">
+    <form action="/manage/push/send" id="push-form" role="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="icon"><i class="icon20 i-settings"></i></div>
+                <h4>Параметры рассылки</h4>
+                <a href="#" class="minimize"></a>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="push-title-field">Текст сообщения</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" name="txt" type="text" id="push-title-field" placeholder="Введите текст рассылки, не более 50 символов">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2">
+                        <div class="pad-left15">
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#push-form").validate({
+            rules: {
+                txt: {
+                    required: true,
+                    maxlength: 50
+                }
+            }
+        });
+    });
+</script>

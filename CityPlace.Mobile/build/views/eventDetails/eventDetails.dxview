@@ -1,0 +1,28 @@
+<div data-options="dxView : { name: 'eventDetails', title: 'Мероприятие' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxScrollView: {}">
+            <div style="padding: 5px">
+                <div class="img-wrapper" data-bind="visible: hasImage()">
+                    <div class="img">
+                        <img data-bind="attr: { src: 'http://cityplace.softgears.ru' + img() }" />
+                    </div>                
+                </div>
+                <div class="text-content" data-bind="html: description"></div>
+                <div class="dx-fieldset">
+                    <div class="dx-field">
+                        <div class="dx-field-label">Начало</div>
+                        <div class="dx-field-value" data-bind="text: event_start">
+                        
+                        </div>
+                    </div>
+                    <div class="dx-field">
+                        <div class="dx-field-label">Конец</div>
+                        <div class="dx-field-value" data-bind="text: event_end">
+                        
+                        </div>
+                    </div>
+                </div>                
+            </div>        
+        </div>
+    </div>
+</div>

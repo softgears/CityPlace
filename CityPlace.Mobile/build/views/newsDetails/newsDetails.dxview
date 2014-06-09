@@ -1,0 +1,20 @@
+<div data-options="dxView : { name: 'newsDetails', title: 'Новость' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxScrollView: {}" style="padding: 5px">
+            <div class="img-wrapper" data-bind="visible: hasImage()">
+                <div class="img">
+                    <img data-bind="attr: { src: 'http://cityplace.softgears.ru' + img() }" />
+                </div>                
+            </div>            
+            <div class="text-content" data-bind="html: content"></div>
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Опубликовано</div>
+                    <div class="dx-field-value" data-bind="text: pdate">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

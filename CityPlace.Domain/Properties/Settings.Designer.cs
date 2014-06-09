@@ -43,5 +43,15 @@ namespace CityPlace.Domain.Properties {
                 return ((string)(this["CityPlaceConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLExpress;Initial Catalog=CityPlace;User ID=yk;Password=ykp@ss")]
+        public string CityPlaceConnectionString2 {
+            get {
+                return ((string)(this["CityPlaceConnectionString2"]));
+            }
+        }
     }
 }

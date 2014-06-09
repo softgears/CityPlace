@@ -15,6 +15,7 @@ using Autofac.Integration.Mvc;
 using CityPlace.Domain.DAL;
 using CityPlace.Domain.Interfaces.Notifications;
 using CityPlace.Web.Classes.Notifications.UI;
+using PushSharp;
 
 namespace CityPlace.Web.Classes
 {
@@ -35,6 +36,7 @@ namespace CityPlace.Web.Classes
         {
             builder.RegisterType<CityPlaceDataContext>().AsSelf().InstancePerHttpRequest();
             builder.RegisterType<UINotificationManager>().As<IUINotificationManager>();
+	        builder.RegisterType<PushBroker>().AsSelf().SingleInstance();
         }
     }
 }

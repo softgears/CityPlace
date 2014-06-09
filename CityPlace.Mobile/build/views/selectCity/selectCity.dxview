@@ -1,0 +1,9 @@
+<div data-options="dxView : { name: 'selectCity', title: 'Выбор города' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxList: { dataSource: ds, noDataText: 'Нет информации о городах', pageLoadingText: 'Загрузка списка городов' }">
+            <div data-options="dxTemplate : { name: 'item' } ">
+                <div style="padding-left: 15px" data-bind="text: name"></div>
+            </div>
+        </div>
+    </div>
+</div>

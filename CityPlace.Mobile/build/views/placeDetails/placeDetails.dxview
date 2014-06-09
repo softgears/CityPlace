@@ -1,0 +1,87 @@
+<div data-options="dxView : { name: 'placeDetails', title: 'Заведение' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxScrollView: {}">
+            <div class="img-wrapper" data-bind="visible: hasImage()">
+                <div class="img">
+                    <img data-bind="attr: { src: 'http://cityplace.softgears.ru' + img() }" />
+                </div>                
+            </div>   
+            <div class="text-content" data-bind="html: description"></div>
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Адрес</div>
+                    <div class="dx-field-value" data-bind="text: address, dxAction: {view: 'placeAddress', address: address()}">
+                        
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Режим работы</div>
+                    <div class="dx-field-value" data-bind="text: work_time, dxAction: { view: 'placeWorkTime', info: work_time() }">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Телефон</div>
+                    <div class="dx-field-value">
+                        <a data-bind="text: phone1, attr: { href: 'tel:'+phone1() }"></a>
+                    </div>
+                </div>
+                <div class="dx-field" data-bind="visible: phone2() != undefined">
+                    <div class="dx-field-label">Телефон</div>
+                    <div class="dx-field-value">
+                        <a data-bind="text: phone2, attr: { href: 'tel:' + phone2() }"></a>
+                    </div>
+                </div>
+                <div class="dx-field" data-bind="visible: phone3() != undefined">
+                    <div class="dx-field-label">Телефон</div>
+                    <div class="dx-field-value">
+                        <a data-bind="text: phone3, attr: { href: 'tel:' + phone3() }"></a>
+                    </div>
+                </div>
+                <div class="dx-field" data-bind="visible: site() != undefined">
+                    <div class="dx-field-label">Сайт</div>
+                    <div class="dx-field-value">
+                        <a data-bind="text: site, attr: {href: site}"></a>
+                    </div>
+                </div>
+                <div class="dx-field" data-bind="visible: email() != undefined">
+                    <div class="dx-field-label">E-mail</div>
+                    <div class="dx-field-value">
+                        <a data-bind="text: email, attr: { href: 'mailo:'+email() }"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label" style="width: 100%; text-align: center;">Средний чек <span data-bind="text: check"></span> рублей</div>
+                </div>                
+                <div class="dx-field" data-bind="visible: wifi">
+                    <div class="dx-field-label" style="width: 100%; text-align: center;">Есть Wi-FI</div>
+                </div>
+                <div class="dx-field" data-bind="visible: cash">
+                    <div class="dx-field-label" style="width: 100%; text-align: center;">Наличный рассчет</div>
+                </div>
+                <div class="dx-field" data-bind="visible: cashless">
+                    <div class="dx-field-label" style="width: 100%; text-align: center;">Безналичный рассчет</div>
+                </div>
+                <div class="dx-field" data-bind="visible: booking">
+                    <div class="dx-field-label" style="width: 100%; text-align: center;">Бронирование столиков</div>
+                </div>
+                <div class="dx-field" data-bind="visible: ordering">
+                    <div class="dx-field-label" style="width: 100%; text-align: center;">Заказ еды</div>
+                </div>
+                <div class="dx-field" data-bind="visible: vip">
+                    <div class="dx-field-label" style="width: 100%; text-align: center;">VIP секция</div>
+                </div>
+                <div class="dx-field" data-bind="visible: liveMusic">
+                    <div class="dx-field-label" style="width: 100%; text-align: center;">Живая музыка</div>
+                </div>
+                <div class="dx-field" data-bind="visible: businessLunch">
+                    <div class="dx-field-label" style="width: 100%; text-align: center;">Бизнес-ланчи</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,6 +9,7 @@ using CityPlace.Domain.Entities;
 using CityPlace.Domain.Interfaces.Repositories;
 using CityPlace.Domain.IoC;
 using CityPlace.Domain.Routing;
+using CityPlace.Domain.Utils;
 using CityPlace.Web.Classes.Ext;
 using CityPlace.Web.Models.Api;
 
@@ -249,5 +250,32 @@ namespace CityPlace.Web.Controllers
 
             return Json(pubs, JsonRequestBehavior.AllowGet);
         }
+
+		/// <summary>
+		/// регистрирует девайс для пуш уведомлений под указанную платформу
+		/// </summary>
+		/// <param name="platform">Идентификатор платформы</param>
+		/// <param name="token">Код устройства</param>
+		/// <returns></returns>
+		[Route("mobile-api/register-device")]
+	    public ActionResult RegisterDevice(string platform, string token)
+		{
+			var rep = Locator.GetService<IDeviceRepository>();
+			var device = rep.Find(d => d.Token == token);
+			if (device == null)
+			{
+				device = new Device()
+				{
+					DateRegistred = DateTime.Now,
+					Platform = (short) PlatformUtils.Parse(platform),
+					Token = token
+				};
+				rep.Add(device);
+				rep.SubmitChanges();
+			}
+
+			return Content("OK");
+		}
+
     }
 }
