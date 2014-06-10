@@ -1146,7 +1146,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\genyx\files\.quarantine\" />
-    <Folder Include="Push\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1254,6 +1253,7 @@
     <Content Include="Views\ManagePublications\Index.cshtml" />
     <Content Include="Views\ManagePublications\Edit.cshtml" />
     <Content Include="Views\ManagePush\Index.cshtml" />
+    <Content Include="Push\apple.p12" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

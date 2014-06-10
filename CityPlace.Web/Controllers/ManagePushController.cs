@@ -53,8 +53,8 @@ namespace CityPlace.Web.Controllers
 				{
 					case MobilePlatform.iOS:
 						push.QueueNotification(new AppleNotification()
-						   .ForDeviceToken("DEVICE TOKEN HERE")
-						   .WithAlert("Hello World!")
+						   .ForDeviceToken(device.Token)
+						   .WithAlert(txt)
 						   .WithBadge(1)
 						   .WithSound("sound.caf"));
 						enqued++;
