@@ -2,7 +2,7 @@
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div data-bind="dxList: { dataSource: ds, noDataText: 'Нет информации о городах', pageLoadingText: 'Загрузка списка городов' }">
             <div data-options="dxTemplate : { name: 'item' } ">
-                <div style="padding-left: 15px" data-bind="text: name"></div>
+                <div style="padding-left: 15px" data-bind="text: name, dxAction: function(){ $root.selectCity(id)}"></div>
             </div>
         </div>
     </div>

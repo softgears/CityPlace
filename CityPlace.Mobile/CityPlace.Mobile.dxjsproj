@@ -214,6 +214,12 @@
     <Content Include="views\placeDetails\placeDetails.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="views\placeEvents\placeEvents.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\placeEvents\placeEvents.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\places\places.dxview">
       <SubType>Content</SubType>
     </Content>
@@ -259,6 +265,7 @@
     <Folder Include="views\categories" />
     <Folder Include="views\eventDetails" />
     <Folder Include="views\authorizeVk" />
+    <Folder Include="views\placeEvents" />
     <Folder Include="views\selectCity" />
     <Folder Include="views\placeWorkTime" />
     <Folder Include="views\placeAddress" />

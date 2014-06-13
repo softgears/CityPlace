@@ -9,6 +9,11 @@
             <div class="text-content" data-bind="html: description"></div>
             <div class="dx-fieldset">
                 <div class="dx-field">
+                    <div style="width: 100%; text-align: center;" class="dx-field-label" data-bind="dxAction: '#placeEvents/{id}'">Ближайшие мероприятия</div>                  
+                </div>
+            </div>
+            <div class="dx-fieldset">
+                <div class="dx-field">
                     <div class="dx-field-label">Адрес</div>
                     <div class="dx-field-value" data-bind="text: address, dxAction: {view: 'placeAddress', address: address()}">
                         

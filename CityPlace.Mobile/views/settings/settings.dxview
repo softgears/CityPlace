@@ -2,22 +2,12 @@
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div class="dx-fieldset">
             <div class="dx-field">
-                <div class="dx-field-label">Логин</div>
-                <div class="dx-field-value">
-                    <div data-bind="text: login"></div>
-                </div>
-            </div>
-            <div class="dx-field" style="text-align: center">
-                <div data-bind="dxButton: { text: 'Авторизоваться' }"></div>
-            </div>
-        </div>
-        <div class="dx-fieldset">
-            <div class="dx-field">
                 <div class="dx-field-label">Город</div>
                 <div class="dx-field-value" data-bind="dxAction: {view: 'selectCity'}, text: city">
                     
                 </div>
             </div>
         </div>
+        <div class="text-content">Вы можете выбрать город, события ночной жизни которого вы будете получать на свой мобильный телефон.</div>
     </div>
 </div>

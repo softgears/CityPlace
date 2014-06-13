@@ -3,8 +3,13 @@
     var viewModel = {
         login: ko.observable("test"),
         authorized: ko.observable(true),
-        city: 'Хабаровск'
+        city: ko.observable('Хабаровск')
     };
+
+    var cityName = window.localStorage.getItem("cityName");
+    if (cityName) {
+        viewModel.city(cityName);
+    }
 
     return viewModel;
 };

@@ -10,6 +10,12 @@
                 <div class="text-content" data-bind="html: description"></div>
                 <div class="dx-fieldset">
                     <div class="dx-field">
+                        <div class="dx-field-label">Где</div>
+                        <div class="dx-field-value" data-bind="text: placeName, dxAction: '#placeDetails/{placeId}'">
+                        
+                        </div>
+                    </div>
+                    <div class="dx-field">
                         <div class="dx-field-label">Начало</div>
                         <div class="dx-field-value" data-bind="text: event_start">
                         

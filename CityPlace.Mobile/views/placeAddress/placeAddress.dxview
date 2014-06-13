@@ -1,7 +1,5 @@
 <div data-options="dxView : { name: 'placeAddress', title: 'Адрес заведения' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
-        <div class="text-content" data-bind="text: address"></div>
-        <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-        <div id="map" style="height: 60%"></div>
+        <div class="text-content" data-bind="text: address"></div>        
     </div>
 </div>
