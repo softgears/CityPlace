@@ -96,8 +96,19 @@ body {
     padding: 15px 5px !important;
 }
 
+.dx-toolbar-button {
+    overflow: none;
+}
+
+.dx-button-back {
+	position: relative;
+    left: 5px;
+	top: -5px;
+}
+
 .dx-toolbar-left {
     margin-top: 17px;
+    overflow: none;
 }
 
 .dx-list-item {
@@ -169,10 +180,18 @@ body {
     border-top: 1px solid #3e3c44;
     border-bottom: 1px solid #141419;
 	padding: 10px;
+
+}
+
+.dx-field-label {
+	padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .dx-field-value {
     text-align: right;
+	padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 a {
