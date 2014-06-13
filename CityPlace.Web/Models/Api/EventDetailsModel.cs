@@ -30,6 +30,16 @@ namespace CityPlace.Web.Models.Api
         /// </summary>
         public string event_end { get; set; }
 
+		/// <summary>
+		/// Имя заведения
+		/// </summary>
+		public string placeName { get; set; }
+
+		/// <summary>
+		/// Идентификатор заведения
+		/// </summary>
+		public long placeId { get; set; }
+
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
@@ -38,6 +48,8 @@ namespace CityPlace.Web.Models.Api
         {
             description = @event.Description;
             event_end = @event.EndDateTime.FormatDateTime();
+	        placeName = @event.Place.Title;
+	        placeId = @event.PlaceId;
         }
     }
 }

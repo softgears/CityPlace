@@ -177,6 +177,44 @@ namespace CityPlace.Web.Controllers
             return Json(cat.Places.Where(p => p.CityId == cityId && !p.Hidden).OrderBy(p => p.Title).Select(p => new PlaceModel(p)).ToList(),JsonRequestBehavior.AllowGet);
         }
 
+		/// <summary>
+		/// Возвращает все события в указанном заведении
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
+		[Route("mobile-api/places/events/{id}")]
+	    public ActionResult PlaceEvents(long id)
+	    {
+			var groupedEvents =
+				EventsRepository.Search(e => e.Place.Id == id && !e.Hidden && e.StartDateTime >= DateTime.Now.Date)
+					.GroupBy(g => g.StartDateTime.Date)
+					.OrderBy(g => g.Key)
+					.ToList();
+			var result = new List<GroupedDataItem>();
+			foreach (var group in groupedEvents)
+			{
+				string keyName;
+				if (group.Key == DateTime.Now.Date)
+				{
+					keyName = "Сегодня";
+				}
+				else if (group.Key == DateTime.Now.Date.AddDays(1))
+				{
+					keyName = "Завтра";
+				}
+				else
+				{
+					keyName = group.Key.FormatDate();
+				}
+				result.Add(new GroupedDataItem()
+				{
+					key = keyName,
+					items = group.Select(e => new EventModel(e))
+				});
+			}
+			return Json(result, JsonRequestBehavior.AllowGet);
+	    }
+
         /// <summary>
         /// Возвращает подробности об указанном событии
         /// </summary>
@@ -190,7 +228,8 @@ namespace CityPlace.Web.Controllers
             {
                 return Json(new EventDetailsModel(new Event()
                 {
-                    Title = "Не найдено"
+                    Title = "Не найдено",
+
                 }), JsonRequestBehavior.AllowGet);
             }
 
