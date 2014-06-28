@@ -1,8 +1,100 @@
-﻿@model dynamic
+﻿@using CityPlace.Domain.Interfaces.Repositories
+@using CityPlace.Domain.IoC
+@using CityPlace.Web.Classes.Ext
+@model dynamic
 
 @{
     ViewBag.Title = "Сводка";
     Layout = "../Shared/AccountLayout.cshtml";
+    var dc = Locator.GetService<IDeviceRepository>();
+    var monthStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+    var monthEnd = monthStart.AddMonths(1).AddDays(-1);
+    if (monthEnd >= DateTime.Now)
+    {
+        monthEnd = DateTime.Now.Date;
+    }
 }
 
-<p>Тут будет сводка</p>
+@* Статистика посещений *@
+<script src="~/Content/highcharts/highcharts.js"></script>
+@* Статистика заказов *@
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="icon"><i class="icon20 i-stats"></i></div>
+            <h4>Статистика установок приложений за последний месяц</h4>
+            <a href="#" class="minimize"></a>
+        </div>
+        <!-- End .panel-heading -->
+
+        <div class="panel-body">
+            @{
+                var allDevices = dc.Search(a => a.DateRegistred >= monthStart && a.DateRegistred <= monthEnd.AddDays(1)).ToList();
+            }
+            <div id="orders-chart" style="width: 100%; height: 300px; margin-top: 0px;">
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- End .panel-body -->
+    </div>
+</div>
+@* Скрипт построения графика заказов *@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#orders-chart").highcharts({
+            chart: {
+                type: 'spline'
+            },
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: 'С @monthStart.FormatDate() по @monthEnd.FormatDate()'
+            },
+            xAxis: {
+                categories: [
+                    @for(var i = 1; i <= @monthEnd.Day; i++)
+                    {
+                        <text>'@i',</text>
+                    }
+                ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Кол-во установок'
+                },
+                min: 0,
+            },
+            tooltip: {
+                enabled: true,
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        this.x + ' @DateTime.Now.ToString("MMM")<br/>' + "Установлено " + this.y + ' раз';
+                }
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true
+                    },
+                    enableMouseTracking: true
+                }
+            },
+            series: [
+                {
+                    name: 'Установки',
+                    data: [
+                        @for (var i = 1; i <= @monthEnd.Day; i++)
+                        {
+                            var date = new DateTime(monthEnd.Year, monthEnd.Month, i);
+                            <text>
+                                @allDevices.Count(h => h.DateRegistred.Value.Date == date.Date),
+                            </text>
+                        }
+                    ]
+                }
+            ]
+        });
+    });
+</script>
