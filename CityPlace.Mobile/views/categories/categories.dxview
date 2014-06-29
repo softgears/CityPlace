@@ -1,6 +1,6 @@
 <div data-options="dxView : { name: 'categories', title: 'Категории' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
-        <div data-bind="dxList: { dataSource: ds }">
+        <div data-bind="dxList: { dataSource: ds, autoPagingEnabled: false }">
             <div data-bind="dxAction: '#places/{id}'" data-options="dxTemplate : { name: 'item' } ">
                 <div class="list-img">
                     <img data-bind="attr: { src: 'http://cityplace.softgears.ru' + img }" />

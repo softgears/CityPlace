@@ -28,12 +28,32 @@ namespace CityPlace.Web
 			var push = Locator.GetService<PushBroker>();
 
 			// Берем сертификат
-			var appleCertPath = HttpContext.Current.Server.MapPath("/Push/apple.p12");
+			var appleCertPath = HttpContext.Current.Server.MapPath("/Push/distibution2.p12");
 			if (File.Exists(appleCertPath))
 			{
 				var appleCert = File.ReadAllBytes(appleCertPath);
-				push.RegisterAppleService(new ApplePushChannelSettings(appleCert, System.Configuration.ConfigurationManager.AppSettings["ApplePushPassword"]));
+				push.RegisterAppleService(new ApplePushChannelSettings(true,appleCertPath, System.Configuration.ConfigurationManager.AppSettings["ApplePushPassword"],true));
 			}
+
+			push.OnChannelException += (sender, channel, error) => 
+			{
+				var s =sender.ToString();
+			};
+
+			push.OnNotificationFailed += (sender, notification, error) =>
+			{
+				var s = error.ToString();
+			};
+
+			push.OnNotificationSent += (sender, notification) =>
+			{
+				var s = notification.ToString();
+			};
+			push.OnNotificationRequeue += (sender, notification) =>
+			{
+				var s = notification.ToString();
+			};
+
 		}
 	}
 }

@@ -1281,6 +1281,7 @@
     <Content Include="Views\ManagePublications\Edit.cshtml" />
     <Content Include="Views\ManagePush\Index.cshtml" />
     <Content Include="Push\apple.p12" />
+    <Content Include="Push\distribution.p12" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

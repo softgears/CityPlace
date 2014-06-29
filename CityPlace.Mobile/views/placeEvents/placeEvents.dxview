@@ -1,6 +1,6 @@
 <div data-options="dxView : { name: 'placeEvents', title: 'Мероприятия' } " >    
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
-        <div data-bind="dxList: { dataSource: ds, grouped: true }">
+        <div data-bind="dxList: { dataSource: ds, noDataText: 'Нет информации о мероприятиях', grouped: true, pageLoadingText: 'Загрузка' }">
             <div data-bind="dxAction: '#eventDetails/{id}'" data-options="dxTemplate : { name: 'item' } ">
                 <div class="list-img">
                     <img data-bind="attr: { src: 'http://cityplace.softgears.ru' + img }" />

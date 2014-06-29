@@ -1,6 +1,6 @@
 <div data-options="dxView : { name: 'home', title: 'Сегодня' } " >
     <div class="home-view"  data-options="dxContent : { targetPlaceholder: 'content' } " >
-        <div data-bind="dxList: { dataSource: ds, noDataText: 'Нет данных для отображения', grouped: true, pageLoadingText: 'Идет загрузка' }">
+        <div data-bind="dxList: { dataSource: ds, noDataText: 'Нет данных для отображения', autoPagingEnabled: false, grouped: true, pageLoadingText: 'Идет загрузка' }">
             <div data-bind="dxAction: $root.itemClick, attr: {itemid: id, objType: objType}" data-options="dxTemplate : { name: 'item' } ">
                 <div class="list-img">
                     <img data-bind="attr: { src: 'http://cityplace.softgears.ru' + img }" />
