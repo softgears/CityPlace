@@ -94,7 +94,7 @@ namespace CityPlace.Domain.Notifications.Mailing
                     var requestParams = new NameValueCollection();
                     requestParams.Add("api_key", uniSenderApiKey);
                     requestParams.Add("email", msg.Recipient);
-                    requestParams.Add("sender_name", "SeoLight");
+                    requestParams.Add("sender_name", "CityPlace");
                     requestParams.Add("sender_email", "mailing.nprdv@gmail.com");
                     requestParams.Add("subject", msg.Subject);
                     requestParams.Add("body", msg.Content);

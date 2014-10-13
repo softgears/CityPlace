@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.375, 11.5" name="CityPlace">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.375, 10.5" name="CityPlace">
   <DataContextMoniker Name="/CityPlaceDataContext" />
   <nestedChildShapes>
-    <classShape Id="6ba25ea4-53c9-47c4-9121-9757e9995460" absoluteBounds="6.75, 1.375, 2, 1.9631982421875005">
+    <classShape Id="6ba25ea4-53c9-47c4-9121-9757e9995460" absoluteBounds="6.75, 2.25, 2, 1.9631982421875005">
       <DataClassMoniker Name="/CityPlaceDataContext/City" />
       <nestedChildShapes>
-        <elementListCompartment Id="e8b11cc1-841b-45ce-9493-155545423917" absoluteBounds="6.765, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e8b11cc1-841b-45ce-9493-155545423917" absoluteBounds="6.765, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="d3e3191c-469c-4767-b16b-d44d6d942da8" absoluteBounds="3.5, 5.25, 2, 3.1170068359375005">
@@ -84,7 +84,7 @@
         <classShapeMoniker Id="fdc4ffeb-b0b9-4c41-bfe0-ae7d3b5fe1b3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 2.73964680989583); (12.125 : 2.73964680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.75 : 3.23159912109375); (12.125 : 3.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CityPlaceDataContext/City/City_Place" />
       <nodes>
         <classShapeMoniker Id="6ba25ea4-53c9-47c4-9121-9757e9995460" />
@@ -117,17 +117,51 @@
         <classShapeMoniker Id="09fd23d6-c768-42d9-93e5-effd47202c8d" />
       </nodes>
     </associationConnector>
-    <classShape Id="b360df88-8035-413b-beea-dd16313371aa" absoluteBounds="12.125, 8.5, 2, 2.7324039713541666">
+    <classShape Id="60468971-6b80-4417-9276-86ba45d05140" absoluteBounds="9.375, 7.375, 2, 2.9247054036458331">
       <DataClassMoniker Name="/CityPlaceDataContext/Publication" />
       <nestedChildShapes>
-        <elementListCompartment Id="81690cdc-4f94-408c-ba12-dbe7be869e94" absoluteBounds="12.14, 8.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cfeb1902-ee98-4373-80d2-c4250b82b736" absoluteBounds="9.39, 7.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="89ee8bb5-82e2-42d5-bb07-cf3e292efc06" absoluteBounds="9.375, 0.5, 2, 1.5785953776041666">
+    <associationConnector edgePoints="[(8.75 : 3.23159912109375); (9.125 : 3.23159912109375); (9.125 : 7); (10.375 : 7); (10.375 : 7.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CityPlaceDataContext/City/City_Publication" />
+      <nodes>
+        <classShapeMoniker Id="6ba25ea4-53c9-47c4-9121-9757e9995460" />
+        <classShapeMoniker Id="60468971-6b80-4417-9276-86ba45d05140" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d7021f92-884d-4c2c-a1c9-a7f0acee0789" absoluteBounds="6.75, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CityPlaceDataContext/CityUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b8e7a26-6c97-429c-815d-4638e40dddda" absoluteBounds="6.765, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 2.25); (7.75 : 2.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CityPlaceDataContext/City/City_CityUser" />
+      <nodes>
+        <classShapeMoniker Id="6ba25ea4-53c9-47c4-9121-9757e9995460" />
+        <classShapeMoniker Id="d7021f92-884d-4c2c-a1c9-a7f0acee0789" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.25); (5.875 : 4.875); (5.875 : 1.28929768880208); (6.75 : 1.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CityPlaceDataContext/User/User_CityUser" />
+      <nodes>
+        <classShapeMoniker Id="d3e3191c-469c-4767-b16b-d44d6d942da8" />
+        <classShapeMoniker Id="d7021f92-884d-4c2c-a1c9-a7f0acee0789" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5aec9e97-de12-47ec-9aaa-76023b148ba8" absoluteBounds="9.375, 0.5, 2, 1.7708968098958331">
       <DataClassMoniker Name="/CityPlaceDataContext/Device" />
       <nestedChildShapes>
-        <elementListCompartment Id="cde2cdf6-d287-4149-a629-24780735bcff" absoluteBounds="9.39, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2a319917-e028-43f4-a5ad-c16bb7d806d1" absoluteBounds="9.39, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <associationConnector edgePoints="[(8.75 : 2.70954756054688); (9.05 : 2.70954756054688); (9.05 : 1.38544840494792); (9.375 : 1.38544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CityPlaceDataContext/City/City_Device" />
+      <nodes>
+        <classShapeMoniker Id="6ba25ea4-53c9-47c4-9121-9757e9995460" />
+        <classShapeMoniker Id="5aec9e97-de12-47ec-9aaa-76023b148ba8" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

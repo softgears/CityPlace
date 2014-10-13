@@ -11,9 +11,13 @@
 // ========
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CityPlace.Domain.Entities;
+using CityPlace.Domain.Interfaces.Repositories;
+using CityPlace.Domain.IoC;
 using CityPlace.Domain.Utils;
 
 namespace CityPlace.Domain.Entities
@@ -98,6 +102,22 @@ namespace CityPlace.Domain.Entities
         public bool HasAdministrativePermission()
         {
             return Role.RolePermissions.Any(p => p.Permission.PermissionGroup == "Администрирование");
-        }    
+        }
+
+		/// <summary>
+		/// Получает список всех доступных пользователю городов
+		/// </summary>
+		/// <returns></returns>
+	    public IList<City> GetAvailableCities()
+	    {
+			if (Role.SystemName == "Admin")
+			{
+				return Locator.GetService<ICitiesRepository>().FindAll().ToList();
+			}
+			else
+			{
+				return CityUsers.Select(c => c.City).ToList();
+			}
+	    }
     }
 }

@@ -36,8 +36,9 @@ namespace CityPlace.Web.Controllers
         [Route("publications")]
         public ActionResult Index()
         {
+	        var cities = CurrentUser.GetAvailableCities().Select(c => c.Id).ToArray();
             var pubs =
-                Repository.FindAll().OrderByDescending(p => p.PublicationDate).ThenByDescending(p => p.DateModified)
+                Repository.Search(c => cities.Contains(c.CityId)).OrderByDescending(p => p.PublicationDate).ThenByDescending(p => p.DateModified)
                     .ThenByDescending(p => p.DateCreated)
                     .ToList();
 
@@ -139,6 +140,11 @@ namespace CityPlace.Web.Controllers
                 TryUpdateModel(publication);
                 publication.DateModified = DateTime.Now;
                 publication.Image = imageUrl ?? oldImage;
+	            if (publication.City.Id != model.CityId)
+	            {
+		            publication.City.Publications.Remove(publication);
+					Locator.GetService<ICitiesRepository>().Load(model.CityId).Publications.Add(publication);
+	            }
                 Repository.SubmitChanges();
 
                 ShowSuccess("Публикация успешно отредактирована");

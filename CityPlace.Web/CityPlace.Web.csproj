@@ -149,6 +149,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageCategoriesController.cs" />
     <Compile Include="Controllers\ManagePlacesController.cs" />
     <Compile Include="Controllers\ManagePublicationsController.cs" />
@@ -1154,8 +1155,12 @@
     <Content Include="Content\highcharts\themes\gray.js" />
     <Content Include="Content\highcharts\themes\grid.js" />
     <Content Include="Content\highcharts\themes\skies.js" />
+    <Content Include="Content\images\landing\descr.png" />
+    <Content Include="Content\images\landing\download.png" />
+    <Content Include="Content\images\landing\logo.png" />
     <Content Include="Content\images\logo-small.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\styles\landing.css" />
     <Content Include="dbupdate.txt" />
     <Content Include="Global.asax" />
     <Content Include="Templates\Mail\Register.html">
@@ -1282,6 +1287,9 @@
     <Content Include="Views\ManagePush\Index.cshtml" />
     <Content Include="Push\apple.p12" />
     <Content Include="Push\distribution.p12" />
+    <Content Include="Push\citypush.p12" />
+    <None Include="Properties\PublishProfiles\Serverloft.pubxml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

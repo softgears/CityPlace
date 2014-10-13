@@ -136,7 +136,7 @@ namespace CityPlace.Web.Controllers
         [AuthorizationCheck(Permission.ManageUsers)]
         [Route("manage/users/update-info")]
         [HttpPost]
-        public ActionResult UpdateCard(long id,long CompanyId, long RoleId, short Status)
+        public ActionResult UpdateCard(long id, long RoleId, short Status)
         {
             var rep = Locator.GetService<IUsersRepository>();
             var rolesRep = Locator.GetService<IRolesRepository>();

@@ -39,13 +39,7 @@
                                     Ф.И.О.
                                 </th>
                                 <th>
-                                    Компания
-                                </th>
-                                <th>
                                     Телефон
-                                </th>
-                                <th>
-                                    Заказов
                                 </th>
                                 <th>
                                     Зарегистрирован
@@ -83,16 +77,13 @@
                                             @user.Phone.FormatPhoneNumber()
                                         </td>
                                         <td>
-                                            @user.GetOrdersCount()
-                                        </td>
-                                        <td>
                                             @user.DateRegistred.FormatDateTime()
                                         </td>
                                         <td>
                                             @user.DateModified.FormatDateTime()
                                         </td>
                                         <td style="width: 45px">
-                                            <a href="/manage/orders/?UserId=@user.Id" class="btn btn-xs btn-success tip" title="Список заказов пользователя"><i class="icon12 i-cart-2"></i></a>
+                                            
                                         </td>
                                     </tr>
                                 }

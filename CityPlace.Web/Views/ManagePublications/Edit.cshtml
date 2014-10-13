@@ -4,6 +4,7 @@
 @{
     ViewBag.Title = Model.Id <= 0 ? "Создание публикации":"Редактирование публикации "+Model.Title;
     Layout = "../Shared/AccountLayout.cshtml";
+    var cities = ViewContext.CurrentUser().GetAvailableCities();
 }
 
 <div class="row">
@@ -16,6 +17,17 @@
                 <a href="#" class="minimize"></a>
             </div>
             <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="place-city-field">Город</label>
+                    <div class="col-lg-10">
+                        <select name="CityId" id="place-city-field">
+                            @foreach (var city in cities)
+                            {
+                                <option value="@city.Id" @(Model.CityId == city.Id ? "selected=selected":"")>@city.Name</option>    
+                            }
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-lg-2 control-label" for="publication-title-field">Заголовок</label>
                     <div class="col-lg-10">

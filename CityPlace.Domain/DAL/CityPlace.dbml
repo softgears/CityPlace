@@ -8,6 +8,9 @@
       <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="City_Place" Member="Places" ThisKey="Id" OtherKey="CityId" Type="Place" />
+      <Association Name="City_Publication" Member="Publications" ThisKey="Id" OtherKey="CityId" Type="Publication" />
+      <Association Name="City_CityUser" Member="CityUsers" ThisKey="Id" OtherKey="CityId" Type="CityUser" />
+      <Association Name="City_Device" Member="Devices" ThisKey="Id" OtherKey="CityId" Type="Device" />
     </Type>
   </Table>
   <Table Name="dbo.Users" Member="Users">
@@ -24,6 +27,7 @@
       <Column Name="DateRegistred" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="User_CityUser" Member="CityUsers" ThisKey="Id" OtherKey="UserId" Type="CityUser" />
       <Association Name="Role_User" Member="Role" ThisKey="RoleId" OtherKey="Id" Type="Role" IsForeignKey="true" />
     </Type>
   </Table>
@@ -164,6 +168,7 @@
   <Table Name="dbo.Publications" Member="Publications">
     <Type Name="Publication">
       <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Annotation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -173,14 +178,27 @@
       <Column Name="Hidden" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="City_Publication" Member="City" ThisKey="CityId" OtherKey="Id" Type="City" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CityUsers" Member="CityUsers">
+    <Type Name="CityUser">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="City_CityUser" Member="City" ThisKey="CityId" OtherKey="Id" Type="City" IsForeignKey="true" />
+      <Association Name="User_CityUser" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Devices" Member="Devices">
     <Type Name="Device">
       <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Platform" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CityId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="Token" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="DateRegistred" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="City_Device" Member="City" ThisKey="CityId" OtherKey="Id" Type="City" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

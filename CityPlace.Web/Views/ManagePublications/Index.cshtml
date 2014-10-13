@@ -23,6 +23,7 @@
                 <thead>
                     <tr>
                         <th>ИД</th>
+                        <th>Город</th>
                         <th>Заголовок</th>
                         <th>Аннотация</th>
                         <th>Категория</th>
@@ -36,7 +37,7 @@
                     @if (Model.Count == 0)
                     {
                         <tr>
-                            <td colspan="8">Нет публикаций в системе</td>
+                            <td colspan="9">Нет публикаций в системе</td>
                         </tr>
                     }
                     else
@@ -46,6 +47,9 @@
                             <tr>
                                 <td>
                                     @publication.Id
+                                </td>
+                                <td>
+                                    @publication.City.Name
                                 </td>
                                 <td>
                                     @publication.Title

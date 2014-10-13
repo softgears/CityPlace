@@ -1,0 +1,19 @@
+﻿html, body, .viewport {
+	height: 100%;
+	background: whitesmoke;
+	color: #111111;
+	font-family: "Roboto Condensed";
+}
+
+.container {
+	margin: auto;
+	text-align: center;
+}
+
+.description {
+	margin: 15px;
+}
+
+.download {
+	
+}

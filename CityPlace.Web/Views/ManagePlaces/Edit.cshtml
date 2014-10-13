@@ -1,11 +1,13 @@
 ﻿@using CityPlace.Domain.Interfaces.Repositories
 @using CityPlace.Domain.IoC
+@using CityPlace.Web.Classes.Ext
 @model CityPlace.Domain.Entities.Place
 
 @{
     ViewBag.Title = Model.Id <= 0 ? "Создание заведения":"Редактирование заведения "+Model.Title;
     Layout = "../Shared/AccountLayout.cshtml";
     var cats = Locator.GetService<ICategoriesRepository>().FindAll().OrderBy(c => c.Title).ToList();
+    var cities = ViewContext.CurrentUser().GetAvailableCities();
 }
 
 <div class="row">
@@ -34,7 +36,10 @@
                     <label class="col-lg-2 control-label" for="place-city-field">Город</label>
                     <div class="col-lg-10">
                         <select name="CityId" id="place-city-field">
-                            <option value="1" @(Model.CityId == 1 ? "selected=selected":"")>Хабаровск</option>
+                            @foreach (var city in cities)
+                            {
+                                <option value="@city.Id" @(Model.CityId == city.Id ? "selected=selected":"")>@city.Name</option>    
+                            }
                         </select>
                     </div>
                 </div>

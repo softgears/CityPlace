@@ -51,8 +51,9 @@ namespace CityPlace.Web.Controllers
         [AuthorizationCheck][Route("places")]
         public ActionResult Index()
         {
+			var cities = CurrentUser.GetAvailableCities().Select(c => c.Id).ToArray();
             var places =
-                Repository.FindAll().OrderBy(p => p.Title).ThenByDescending(p => p.DateModified)
+                Repository.Search(c => cities.Contains(c.CityId)).OrderBy(p => p.Title).ThenByDescending(p => p.DateModified)
                     .ThenByDescending(p => p.DateCreated)
                     .ToList();
 
