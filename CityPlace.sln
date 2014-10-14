@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityPlace.Domain", "CityPla
 EndProject
 Project("{1B19158F-E398-40A6-8E3B-350508E125F1}") = "CityPlace.Mobile", "CityPlace.Mobile\CityPlace.Mobile.dxjsproj", "{ECD99F21-DEE2-4407-8EC9-9A844B28EE21}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CityPlace.iOS", "CityPlace.iOS", "{13073919-343E-4AF4-A85E-DD6D81D97106}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
