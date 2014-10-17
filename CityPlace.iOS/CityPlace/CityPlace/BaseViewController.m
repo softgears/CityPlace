@@ -47,4 +47,32 @@
 }
 */
 
+#pragma mark - Common functions
+
+// Получает текущий идентификатор города
+- (NSInteger) getCityId
+{
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    NSInteger cityId = [defs integerForKey:@"cityId"];
+    if (cityId == 0){
+        cityId = 1;
+    }
+    return cityId;
+}
+
+// Выполняет асинхронный GET запрос по указанному URL
+- (void) getJsonFromUrl: (NSString *) url success: (void (^)(id))successCallback error: (void (^)(NSError *)) errorCallback
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        successCallback(responseObject);
+        //NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (error != nil){
+            errorCallback(error);
+        }
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
+
 IB_DESIGNABLE
 @interface BaseViewController : UIViewController
+
+- (NSInteger) getCityId;
+- (void) getJsonFromUrl: (NSString *) url success: (void (^)(id))successCallback error: (void (^)(NSError *)) errorCallback;
 
 @end

@@ -32,6 +32,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.view addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+    }
+}
+
 /*
 #pragma mark - Navigation
 
