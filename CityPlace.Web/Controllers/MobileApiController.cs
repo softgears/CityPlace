@@ -290,14 +290,15 @@ namespace CityPlace.Web.Controllers
             return Json(pubs, JsonRequestBehavior.AllowGet);
         }
 
-		/// <summary>
-		/// регистрирует девайс для пуш уведомлений под указанную платформу
-		/// </summary>
-		/// <param name="platform">Идентификатор платформы</param>
-		/// <param name="token">Код устройства</param>
-		/// <returns></returns>
-		[Route("mobile-api/register-device")]
-	    public ActionResult RegisterDevice(string platform, string token)
+	    /// <summary>
+	    /// регистрирует девайс для пуш уведомлений под указанную платформу
+	    /// </summary>
+	    /// <param name="platform">Идентификатор платформы</param>
+	    /// <param name="token">Код устройства</param>
+	    /// <param name="cityId">Идентификатор города</param>
+	    /// <returns></returns>
+	    [Route("mobile-api/register-device")]
+	    public ActionResult RegisterDevice(string platform, string token,long cityId = 1)
 		{
 			var rep = Locator.GetService<IDeviceRepository>();
 			var device = rep.Find(d => d.Token == token);
@@ -307,10 +308,20 @@ namespace CityPlace.Web.Controllers
 				{
 					DateRegistred = DateTime.Now,
 					Platform = (short) PlatformUtils.Parse(platform),
-					Token = token
+					Token = token,
+					CityId = cityId
 				};
 				rep.Add(device);
 				rep.SubmitChanges();
+			}
+			else
+			{
+				if (device.CityId != cityId)
+				{
+					device.City.Devices.Remove(device);
+					Locator.GetService<ICitiesRepository>().Load(cityId).Devices.Add(device);
+					rep.SubmitChanges();
+				}
 			}
 
 			return Content("OK");
