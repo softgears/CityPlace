@@ -16,10 +16,22 @@
 		6F0C75F919EE350200F1C95F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C75F819EE350200F1C95F /* SWRevealViewController.m */; };
 		6F0C75FF19EE360400F1C95F /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C75FE19EE360400F1C95F /* ContentViewController.m */; };
 		6F2477BF19EF804200158760 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F2477BE19EF804200158760 /* Images.xcassets */; };
+		6F29C4AB19F49EE800144845 /* PubDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F29C4AA19F49EE800144845 /* PubDetailsViewController.m */; };
 		6F2E074C19EF640400C8A6DA /* SideBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E074B19EF640400C8A6DA /* SideBarCell.m */; };
 		6F2E074F19EF668600C8A6DA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E074E19EF668600C8A6DA /* BaseViewController.m */; };
 		6F6AB10419EE431300F852AF /* SideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6AB10319EE431300F852AF /* SideBarController.m */; };
+		6F6ACF5C19F610B30025E6BF /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6ACF5B19F610B30025E6BF /* EventsViewController.m */; };
+		6F6ACF6419F61CB10025E6BF /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6ACF6319F61CB10025E6BF /* EventDetailsViewController.m */; };
 		6F7D596219EF7730004E8363 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7D596119EF7730004E8363 /* AboutViewController.m */; };
+		6FAC8DC719F7313700BBB619 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC8DC619F7313700BBB619 /* SettingsViewController.m */; };
+		6FAC8DCA19F7358A00BBB619 /* SettingsTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC8DC919F7358A00BBB619 /* SettingsTextCell.m */; };
+		6FAC8DCD19F7386100BBB619 /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC8DCC19F7386100BBB619 /* CitiesViewController.m */; };
+		6FAC8DD319F741BF00BBB619 /* PlaceDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC8DD219F741BF00BBB619 /* PlaceDetailsViewController.m */; };
+		6FAC8DD719F7447600BBB619 /* PlaceImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC8DD619F7447600BBB619 /* PlaceImageCell.m */; };
+		6FAC8DDA19F7480E00BBB619 /* PlaceDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC8DD919F7480E00BBB619 /* PlaceDescriptionCell.m */; };
+		6FAC8DDD19F74F0C00BBB619 /* PlacePropCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC8DDC19F74F0C00BBB619 /* PlacePropCell.m */; };
+		6FAC8DE019F7597E00BBB619 /* PlaceActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC8DDF19F7597E00BBB619 /* PlaceActionCell.m */; };
+		6FAC8DE319F7607600BBB619 /* PlaceEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC8DE219F7607600BBB619 /* PlaceEventsViewController.m */; };
 		6FF4096F19F095DB00FB7CCF /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF4096E19F095DB00FB7CCF /* NewsViewController.m */; };
 		6FF4097519F0985100FB7CCF /* CityPlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF4097419F0985100FB7CCF /* CityPlaceCell.m */; };
 		6FF4097719F09A3500FB7CCF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF4097619F09A3500FB7CCF /* QuartzCore.framework */; };
@@ -80,14 +92,38 @@
 		6F0C75FD19EE360400F1C95F /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		6F0C75FE19EE360400F1C95F /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		6F2477BE19EF804200158760 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CityPlace/Images.xcassets; sourceTree = "<group>"; };
+		6F29C4A919F49EE800144845 /* PubDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubDetailsViewController.h; sourceTree = "<group>"; };
+		6F29C4AA19F49EE800144845 /* PubDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubDetailsViewController.m; sourceTree = "<group>"; };
 		6F2E074A19EF640400C8A6DA /* SideBarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarCell.h; sourceTree = "<group>"; };
 		6F2E074B19EF640400C8A6DA /* SideBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarCell.m; sourceTree = "<group>"; };
 		6F2E074D19EF668600C8A6DA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		6F2E074E19EF668600C8A6DA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		6F6AB10219EE431300F852AF /* SideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarController.h; sourceTree = "<group>"; };
 		6F6AB10319EE431300F852AF /* SideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarController.m; sourceTree = "<group>"; };
+		6F6ACF5A19F610B30025E6BF /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
+		6F6ACF5B19F610B30025E6BF /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
+		6F6ACF6219F61CB10025E6BF /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		6F6ACF6319F61CB10025E6BF /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		6F7D596019EF7730004E8363 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		6F7D596119EF7730004E8363 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		6FAC8DC519F7313700BBB619 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		6FAC8DC619F7313700BBB619 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		6FAC8DC819F7358A00BBB619 /* SettingsTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTextCell.h; sourceTree = "<group>"; };
+		6FAC8DC919F7358A00BBB619 /* SettingsTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTextCell.m; sourceTree = "<group>"; };
+		6FAC8DCB19F7386100BBB619 /* CitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesViewController.h; sourceTree = "<group>"; };
+		6FAC8DCC19F7386100BBB619 /* CitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesViewController.m; sourceTree = "<group>"; };
+		6FAC8DD119F741BF00BBB619 /* PlaceDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetailsViewController.h; sourceTree = "<group>"; };
+		6FAC8DD219F741BF00BBB619 /* PlaceDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetailsViewController.m; sourceTree = "<group>"; };
+		6FAC8DD519F7447600BBB619 /* PlaceImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceImageCell.h; sourceTree = "<group>"; };
+		6FAC8DD619F7447600BBB619 /* PlaceImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceImageCell.m; sourceTree = "<group>"; };
+		6FAC8DD819F7480E00BBB619 /* PlaceDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDescriptionCell.h; sourceTree = "<group>"; };
+		6FAC8DD919F7480E00BBB619 /* PlaceDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDescriptionCell.m; sourceTree = "<group>"; };
+		6FAC8DDB19F74F0C00BBB619 /* PlacePropCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacePropCell.h; sourceTree = "<group>"; };
+		6FAC8DDC19F74F0C00BBB619 /* PlacePropCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacePropCell.m; sourceTree = "<group>"; };
+		6FAC8DDE19F7597E00BBB619 /* PlaceActionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceActionCell.h; sourceTree = "<group>"; };
+		6FAC8DDF19F7597E00BBB619 /* PlaceActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceActionCell.m; sourceTree = "<group>"; };
+		6FAC8DE119F7607600BBB619 /* PlaceEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceEventsViewController.h; sourceTree = "<group>"; };
+		6FAC8DE219F7607600BBB619 /* PlaceEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceEventsViewController.m; sourceTree = "<group>"; };
 		6FF4096D19F095DB00FB7CCF /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		6FF4096E19F095DB00FB7CCF /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		6FF4097319F0985100FB7CCF /* CityPlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityPlaceCell.h; sourceTree = "<group>"; };
@@ -251,6 +287,20 @@
 				6FF409C819F0AA2800FB7CCF /* PlaceCategoriesViewController.m */,
 				6FF409CA19F0AFA600FB7CCF /* PlacesViewController.h */,
 				6FF409CB19F0AFA600FB7CCF /* PlacesViewController.m */,
+				6F29C4A919F49EE800144845 /* PubDetailsViewController.h */,
+				6F29C4AA19F49EE800144845 /* PubDetailsViewController.m */,
+				6F6ACF5A19F610B30025E6BF /* EventsViewController.h */,
+				6F6ACF5B19F610B30025E6BF /* EventsViewController.m */,
+				6F6ACF6219F61CB10025E6BF /* EventDetailsViewController.h */,
+				6F6ACF6319F61CB10025E6BF /* EventDetailsViewController.m */,
+				6FAC8DC519F7313700BBB619 /* SettingsViewController.h */,
+				6FAC8DC619F7313700BBB619 /* SettingsViewController.m */,
+				6FAC8DCB19F7386100BBB619 /* CitiesViewController.h */,
+				6FAC8DCC19F7386100BBB619 /* CitiesViewController.m */,
+				6FAC8DD119F741BF00BBB619 /* PlaceDetailsViewController.h */,
+				6FAC8DD219F741BF00BBB619 /* PlaceDetailsViewController.m */,
+				6FAC8DE119F7607600BBB619 /* PlaceEventsViewController.h */,
+				6FAC8DE219F7607600BBB619 /* PlaceEventsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -267,10 +317,13 @@
 		6F2477BC19EF7DED00158760 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				6FAC8DD419F7441F00BBB619 /* PlaceDetails */,
 				6F2E074A19EF640400C8A6DA /* SideBarCell.h */,
 				6F2E074B19EF640400C8A6DA /* SideBarCell.m */,
 				6FF4097319F0985100FB7CCF /* CityPlaceCell.h */,
 				6FF4097419F0985100FB7CCF /* CityPlaceCell.m */,
+				6FAC8DC819F7358A00BBB619 /* SettingsTextCell.h */,
+				6FAC8DC919F7358A00BBB619 /* SettingsTextCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -282,6 +335,21 @@
 				6F0C75F819EE350200F1C95F /* SWRevealViewController.m */,
 			);
 			name = Reveal;
+			sourceTree = "<group>";
+		};
+		6FAC8DD419F7441F00BBB619 /* PlaceDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6FAC8DD519F7447600BBB619 /* PlaceImageCell.h */,
+				6FAC8DD619F7447600BBB619 /* PlaceImageCell.m */,
+				6FAC8DD819F7480E00BBB619 /* PlaceDescriptionCell.h */,
+				6FAC8DD919F7480E00BBB619 /* PlaceDescriptionCell.m */,
+				6FAC8DDB19F74F0C00BBB619 /* PlacePropCell.h */,
+				6FAC8DDC19F74F0C00BBB619 /* PlacePropCell.m */,
+				6FAC8DDE19F7597E00BBB619 /* PlaceActionCell.h */,
+				6FAC8DDF19F7597E00BBB619 /* PlaceActionCell.m */,
+			);
+			name = PlaceDetails;
 			sourceTree = "<group>";
 		};
 		6FF4097819F09AC700FB7CCF /* AFNetworking */ = {
@@ -455,35 +523,47 @@
 				6FF409CC19F0AFA600FB7CCF /* PlacesViewController.m in Sources */,
 				6FF409BE19F0A53400FB7CCF /* SDWebImageManager.m in Sources */,
 				6FF409BA19F0A53400FB7CCF /* SDWebImageCompat.m in Sources */,
+				6F6ACF6419F61CB10025E6BF /* EventDetailsViewController.m in Sources */,
 				6FF409BF19F0A53400FB7CCF /* SDWebImagePrefetcher.m in Sources */,
 				6F7D596219EF7730004E8363 /* AboutViewController.m in Sources */,
 				6FF409B919F0A53400FB7CCF /* SDImageCache.m in Sources */,
 				6F6AB10419EE431300F852AF /* SideBarController.m in Sources */,
 				6FF409C019F0A53400FB7CCF /* UIButton+WebCache.m in Sources */,
+				6FAC8DDA19F7480E00BBB619 /* PlaceDescriptionCell.m in Sources */,
 				6F2E074F19EF668600C8A6DA /* BaseViewController.m in Sources */,
 				6F2E074C19EF640400C8A6DA /* SideBarCell.m in Sources */,
 				6FF409C319F0A53400FB7CCF /* UIImage+WebP.m in Sources */,
 				6FF4099419F09AC700FB7CCF /* AFURLSessionManager.m in Sources */,
+				6FAC8DE019F7597E00BBB619 /* PlaceActionCell.m in Sources */,
 				6FF4098E19F09AC700FB7CCF /* AFHTTPSessionManager.m in Sources */,
 				6FF4097519F0985100FB7CCF /* CityPlaceCell.m in Sources */,
 				6FF409C119F0A53400FB7CCF /* UIImage+GIF.m in Sources */,
 				6FF409C619F0A53400FB7CCF /* UIView+WebCacheOperation.m in Sources */,
 				6FF4098F19F09AC700FB7CCF /* AFNetworkReachabilityManager.m in Sources */,
 				6F0C75D819EE34C000F1C95F /* ViewController.m in Sources */,
+				6F29C4AB19F49EE800144845 /* PubDetailsViewController.m in Sources */,
+				6F6ACF5C19F610B30025E6BF /* EventsViewController.m in Sources */,
 				6FF409C219F0A53400FB7CCF /* UIImage+MultiFormat.m in Sources */,
 				6FF409BB19F0A53400FB7CCF /* SDWebImageDecoder.m in Sources */,
 				6FF409B819F0A53400FB7CCF /* NSData+ImageContentType.m in Sources */,
 				6FF4099319F09AC700FB7CCF /* AFURLResponseSerialization.m in Sources */,
+				6FAC8DD719F7447600BBB619 /* PlaceImageCell.m in Sources */,
+				6FAC8DC719F7313700BBB619 /* SettingsViewController.m in Sources */,
 				6FF409BD19F0A53400FB7CCF /* SDWebImageDownloaderOperation.m in Sources */,
+				6FAC8DCD19F7386100BBB619 /* CitiesViewController.m in Sources */,
+				6FAC8DDD19F74F0C00BBB619 /* PlacePropCell.m in Sources */,
 				6FF409B719F0A53400FB7CCF /* MKAnnotationView+WebCache.m in Sources */,
 				6FF4099219F09AC700FB7CCF /* AFURLRequestSerialization.m in Sources */,
 				6FF4099119F09AC700FB7CCF /* AFURLConnectionOperation.m in Sources */,
 				6FF4098D19F09AC700FB7CCF /* AFHTTPRequestOperationManager.m in Sources */,
 				6F0C75D519EE34C000F1C95F /* AppDelegate.m in Sources */,
+				6FAC8DCA19F7358A00BBB619 /* SettingsTextCell.m in Sources */,
 				6FF409BC19F0A53400FB7CCF /* SDWebImageDownloader.m in Sources */,
 				6F0C75FF19EE360400F1C95F /* ContentViewController.m in Sources */,
 				6FF4099019F09AC700FB7CCF /* AFSecurityPolicy.m in Sources */,
 				6FF4096F19F095DB00FB7CCF /* NewsViewController.m in Sources */,
+				6FAC8DD319F741BF00BBB619 /* PlaceDetailsViewController.m in Sources */,
+				6FAC8DE319F7607600BBB619 /* PlaceEventsViewController.m in Sources */,
 				6FF409C519F0A53400FB7CCF /* UIImageView+WebCache.m in Sources */,
 				6FF409C919F0AA2800FB7CCF /* PlaceCategoriesViewController.m in Sources */,
 				6F0C75D219EE34C000F1C95F /* main.m in Sources */,

@@ -27,6 +27,8 @@
         [self.revealButtonItem setTarget: self.revealViewController];
         [self.revealButtonItem setAction: @selector( revealToggle: )];
     }
+    
+    self.navigationItem.title = [self getCityName];
 
 }
 

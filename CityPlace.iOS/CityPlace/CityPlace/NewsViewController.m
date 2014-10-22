@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "CityPlaceCell.h"
 #import "SDWebImage/UIImageView+WebCache.h"
+#import "PubDetailsViewController.h"
 
 @interface NewsViewController ()
 
@@ -91,14 +92,22 @@
     return cell;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    PubDetailsViewController *destViewController = (PubDetailsViewController*)segue.destinationViewController;
+    
+    NSIndexPath *myIndexPath = [self.tableView
+                                indexPathForSelectedRow];
+    
+    NSObject *selCategory = [self.items objectAtIndex:myIndexPath.row];
+    destViewController.navigationItem.title = [selCategory valueForKey:@"title"];
+    NSNumber *articleId = [selCategory valueForKey:@"id"];
+    destViewController.articleId = [articleId integerValue];
 }
-*/
+
 
 @end

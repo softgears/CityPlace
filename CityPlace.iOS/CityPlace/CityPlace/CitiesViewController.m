@@ -1,30 +1,29 @@
 //
-//  PlacesViewController.m
+//  CitiesViewController.m
 //  CityPlace
 //
-//  Created by Yuri Korshev on 17.10.14.
+//  Created by Yuri Korshev on 22.10.14.
 //  Copyright (c) 2014 SoftGears. All rights reserved.
 //
 
-#import "PlacesViewController.h"
-#import "SWRevealViewController.h"
+#import "CitiesViewController.h"
 #import "CityPlaceCell.h"
-#import "SDWebImage/UIImageView+WebCache.h"
-#import "PlaceDetailsViewController.h"
+#import "SettingsViewController.h"
 
-@interface PlacesViewController ()
+@interface CitiesViewController ()
 
 @end
 
-@implementation PlacesViewController
+@implementation CitiesViewController
 
 @synthesize tableView;
 @synthesize loadingIndicator;
 @synthesize items;
-@synthesize placeId;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Выберите город";
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     item.tintColor = [UIColor whiteColor];
@@ -46,7 +45,7 @@
 
 - (void)loadData {
     
-    NSString *url = [NSString stringWithFormat:@"http://cityplace.softgears.ru/mobile-api/places/%ld?cityId=%ld",(long)self.placeId, (long)[self getCityId]];
+    NSString *url = @"http://cityplace.softgears.ru/mobile-api/cities/";
     [self getJsonFromUrl:url success:^(id object){
         self.items = object;
         [self.tableView reloadData];
@@ -57,13 +56,10 @@
     }];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -82,33 +78,32 @@
     
     NSObject *obj = [self.items objectAtIndex:indexPath.row];
     
-    cell.label.text = [obj valueForKey:@"title"];
-    cell.imageUrl = [obj valueForKey:@"img"];
+    cell.label.text = [obj valueForKey:@"name"];
     
-    if (cell.imageUrl != nil){
-        NSString *imageUrl = [NSString stringWithFormat:@"http://cityplace.softgears.ru/%@",cell.imageUrl];
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]
-                          placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    NSString *currentCity = [self getCityName];
+    
+    if ([cell.label.text isEqualToString:currentCity]){
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSObject *obj = [self.items objectAtIndex:indexPath.row];
+    [self updateCurrentCityWithId:[obj valueForKey:@"id"] andName:[obj valueForKey:@"name"]];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PlaceDetailsViewController *destViewController = (PlaceDetailsViewController*)segue.destinationViewController;
-    
-    NSIndexPath *myIndexPath = [self.tableView
-                                indexPathForSelectedRow];
-    
-    NSObject *selPlace = [self.items objectAtIndex:myIndexPath.row];
-    destViewController.navigationItem.title = [selPlace valueForKey:@"title"];
-    NSNumber *selPlaceId = [selPlace valueForKey:@"id"];
-    destViewController.placeId = [selPlaceId integerValue];
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-
+*/
 
 @end

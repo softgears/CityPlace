@@ -60,6 +60,25 @@
     return cityId;
 }
 
+// Получает текущее наименование города
+- (NSString*) getCityName
+{
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    NSString* cityName = [defs stringForKey:@"cityName"];
+    if (cityName == nil){
+        cityName = @"Хабаровск";
+    }
+    return cityName;
+}
+
+- (void) updateCurrentCityWithId:(NSNumber *)cityId andName:(NSString*)cityName {
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    [defs setObject:cityId forKey:@"cityId"];
+    [defs setObject:cityName forKey:@"cityName"];
+    [defs synchronize];
+    // TODO: add pusn notification update
+}
+
 // Выполняет асинхронный GET запрос по указанному URL
 - (void) getJsonFromUrl: (NSString *) url success: (void (^)(id))successCallback error: (void (^)(NSError *)) errorCallback
 {
