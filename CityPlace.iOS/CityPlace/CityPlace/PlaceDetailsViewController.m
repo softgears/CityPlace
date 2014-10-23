@@ -15,6 +15,7 @@
 #import "PlacePropCell.h"
 #import "PlaceActionCell.h"
 #import "PlaceEventsViewController.h"
+#import "PropDescriptionViewController.h"
 
 @interface PlaceDetailsViewController ()
 
@@ -204,6 +205,15 @@
         destViewController.navigationItem.title = [NSString stringWithFormat:@"События %@",[self.obj valueForKey:@"title"]];
         NSNumber *plId = [self.obj valueForKey:@"id"];
         destViewController.placeId = [plId integerValue];
+    }
+    if ([segue.identifier isEqualToString:@"showPropDesc"]){
+        PropDescriptionViewController *destViewController = (PropDescriptionViewController*)segue.destinationViewController;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PlacePropCell *cell = (PlacePropCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+        
+        destViewController.navigationItem.title = cell.propName.text;
+        destViewController.propText = cell.propValue.text;
     }
 }
 

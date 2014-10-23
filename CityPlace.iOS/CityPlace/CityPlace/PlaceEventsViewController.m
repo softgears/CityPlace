@@ -31,7 +31,7 @@
     
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 90, 0);
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav"] style:UIBarButtonItemStylePlain target:self.revealViewController action:@selector(revealToggle:)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     item.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = item;
     
@@ -50,6 +50,10 @@
         [self.loadingIndicator stopAnimating];
     }];
 
+}
+
+- (void) goBack {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

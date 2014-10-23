@@ -19,6 +19,9 @@
 		6F29C4AB19F49EE800144845 /* PubDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F29C4AA19F49EE800144845 /* PubDetailsViewController.m */; };
 		6F2E074C19EF640400C8A6DA /* SideBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E074B19EF640400C8A6DA /* SideBarCell.m */; };
 		6F2E074F19EF668600C8A6DA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E074E19EF668600C8A6DA /* BaseViewController.m */; };
+		6F390A7A19F89A750036D57A /* Certificates in Resources */ = {isa = PBXBuildFile; fileRef = 6F390A7919F89A750036D57A /* Certificates */; };
+		6F390A7D19F8AA7B0036D57A /* PropDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F390A7C19F8AA7B0036D57A /* PropDescriptionViewController.m */; };
+		6F390A8119F8B0F80036D57A /* libFlurry_5.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F390A8019F8B0F80036D57A /* libFlurry_5.4.0.a */; };
 		6F6AB10419EE431300F852AF /* SideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6AB10319EE431300F852AF /* SideBarController.m */; };
 		6F6ACF5C19F610B30025E6BF /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6ACF5B19F610B30025E6BF /* EventsViewController.m */; };
 		6F6ACF6419F61CB10025E6BF /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6ACF6319F61CB10025E6BF /* EventDetailsViewController.m */; };
@@ -98,6 +101,11 @@
 		6F2E074B19EF640400C8A6DA /* SideBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarCell.m; sourceTree = "<group>"; };
 		6F2E074D19EF668600C8A6DA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		6F2E074E19EF668600C8A6DA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		6F390A7919F89A750036D57A /* Certificates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Certificates; sourceTree = "<group>"; };
+		6F390A7B19F8AA7B0036D57A /* PropDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropDescriptionViewController.h; sourceTree = "<group>"; };
+		6F390A7C19F8AA7B0036D57A /* PropDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropDescriptionViewController.m; sourceTree = "<group>"; };
+		6F390A7F19F8B0F80036D57A /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		6F390A8019F8B0F80036D57A /* libFlurry_5.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.4.0.a; sourceTree = "<group>"; };
 		6F6AB10219EE431300F852AF /* SideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarController.h; sourceTree = "<group>"; };
 		6F6AB10319EE431300F852AF /* SideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarController.m; sourceTree = "<group>"; };
 		6F6ACF5A19F610B30025E6BF /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FF4097719F09A3500FB7CCF /* QuartzCore.framework in Frameworks */,
+				6F390A8119F8B0F80036D57A /* libFlurry_5.4.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +238,8 @@
 		6F0C75CE19EE34C000F1C95F /* CityPlace */ = {
 			isa = PBXGroup;
 			children = (
+				6F390A7E19F8B0E50036D57A /* Flurry */,
+				6F390A7919F89A750036D57A /* Certificates */,
 				6FF4099519F0A53400FB7CCF /* SDWebImage */,
 				6FF4097819F09AC700FB7CCF /* AFNetworking */,
 				6F0C75D319EE34C000F1C95F /* AppDelegate.h */,
@@ -301,6 +312,8 @@
 				6FAC8DD219F741BF00BBB619 /* PlaceDetailsViewController.m */,
 				6FAC8DE119F7607600BBB619 /* PlaceEventsViewController.h */,
 				6FAC8DE219F7607600BBB619 /* PlaceEventsViewController.m */,
+				6F390A7B19F8AA7B0036D57A /* PropDescriptionViewController.h */,
+				6F390A7C19F8AA7B0036D57A /* PropDescriptionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -335,6 +348,15 @@
 				6F0C75F819EE350200F1C95F /* SWRevealViewController.m */,
 			);
 			name = Reveal;
+			sourceTree = "<group>";
+		};
+		6F390A7E19F8B0E50036D57A /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				6F390A7F19F8B0F80036D57A /* Flurry.h */,
+				6F390A8019F8B0F80036D57A /* libFlurry_5.4.0.a */,
+			);
+			name = Flurry;
 			sourceTree = "<group>";
 		};
 		6FAC8DD419F7441F00BBB619 /* PlaceDetails */ = {
@@ -467,6 +489,7 @@
 				TargetAttributes = {
 					6F0C75CB19EE34C000F1C95F = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = K3395GWFSA;
 					};
 					6F0C75E419EE34C000F1C95F = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -500,6 +523,7 @@
 			files = (
 				6F2477BF19EF804200158760 /* Images.xcassets in Resources */,
 				6F0C75DB19EE34C000F1C95F /* Main.storyboard in Resources */,
+				6F390A7A19F89A750036D57A /* Certificates in Resources */,
 				6F0C75E019EE34C000F1C95F /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +564,7 @@
 				6FF409C119F0A53400FB7CCF /* UIImage+GIF.m in Sources */,
 				6FF409C619F0A53400FB7CCF /* UIView+WebCacheOperation.m in Sources */,
 				6FF4098F19F09AC700FB7CCF /* AFNetworkReachabilityManager.m in Sources */,
+				6F390A7D19F8AA7B0036D57A /* PropDescriptionViewController.m in Sources */,
 				6F0C75D819EE34C000F1C95F /* ViewController.m in Sources */,
 				6F29C4AB19F49EE800144845 /* PubDetailsViewController.m in Sources */,
 				6F6ACF5C19F610B30025E6BF /* EventsViewController.m in Sources */,
@@ -690,10 +715,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuri Korshev (XFBM3385EQ)";
 				INFOPLIST_FILE = CityPlace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CityPlace",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "81b41512-2f13-4b46-bd28-dfba7a486209";
 				SWIFT_OBJC_BRIDGING_HEADER = "CityPlace/CityPlace-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -704,10 +735,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yuri Korshev (K3395GWFSA)";
 				INFOPLIST_FILE = CityPlace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CityPlace",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "81b41512-2f13-4b46-bd28-dfba7a486209";
 				SWIFT_OBJC_BRIDGING_HEADER = "CityPlace/CityPlace-Bridging-Header.h";
 			};
 			name = Release;

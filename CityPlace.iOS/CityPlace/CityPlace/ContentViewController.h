@@ -12,5 +12,8 @@
 @interface ContentViewController : BaseViewController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSMutableArray *items;
 
 @end

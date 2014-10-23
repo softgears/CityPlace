@@ -76,17 +76,21 @@
     [defs setObject:cityId forKey:@"cityId"];
     [defs setObject:cityName forKey:@"cityName"];
     [defs synchronize];
-    // TODO: add pusn notification update
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
 }
 
 // Выполняет асинхронный GET запрос по указанному URL
 - (void) getJsonFromUrl: (NSString *) url success: (void (^)(id))successCallback error: (void (^)(NSError *)) errorCallback
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         successCallback(responseObject);
         //NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         if (error != nil){
             errorCallback(error);
         }
