@@ -324,7 +324,7 @@ namespace CityPlace.Web.Controllers
 				}
 			}
 
-			return Content("OK");
+			return Json(new {content = "OK"});
 		}
 
     }
