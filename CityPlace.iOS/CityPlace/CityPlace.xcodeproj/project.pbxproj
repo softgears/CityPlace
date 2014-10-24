@@ -744,7 +744,7 @@
 					"$(PROJECT_DIR)/CityPlace",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "81b41512-2f13-4b46-bd28-dfba7a486209";
+				PROVISIONING_PROFILE = "305d55e1-e667-4a6e-8c20-38f04e13e09b";
 				SWIFT_OBJC_BRIDGING_HEADER = "CityPlace/CityPlace-Bridging-Header.h";
 			};
 			name = Release;

@@ -65,7 +65,10 @@
         
         self.obj = object;
         
-        [self.detailsText sizeToFit];
+        //[self.detailsText sizeToFit];
+        
+        [self.view updateConstraints];
+        
     }error: ^ (NSError * error){
         [self.loadingIndicator stopAnimating];
     }];
@@ -81,8 +84,6 @@
 }
 
 - (void) viewDidLayoutSubviews {
-    CGFloat height = self.whereButton.frame.size.height;
-    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.whereButton.frame.origin.y+height)];
     
 }
 

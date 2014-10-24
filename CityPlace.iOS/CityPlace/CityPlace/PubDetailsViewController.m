@@ -56,6 +56,9 @@
         self.scrollView.hidden = NO;
         
         [self.detailsText sizeToFit];
+        [self.view updateConstraints];
+        //CGFloat height = self.publishedText.frame.size.height;
+        //[self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.publishedText.frame.origin.y+height)];
     }error: ^ (NSError * error){
         [self.loadingIndicator stopAnimating];
     }];
@@ -71,8 +74,8 @@
 }
 
 - (void) viewDidLayoutSubviews {
-    CGFloat height = self.publishedText.frame.size.height;
-    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.publishedText.frame.origin.y+height)];
+    //CGFloat height = self.publishedText.frame.size.height;
+    //[self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.publishedText.frame.origin.y+height)];
     
 }
 

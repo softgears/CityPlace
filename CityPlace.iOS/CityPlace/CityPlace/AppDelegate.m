@@ -23,6 +23,7 @@
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
     [Flurry startSession:@"M597GV74YJS255H5MFS7"];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
     return YES;
 }
@@ -35,7 +36,7 @@
     // Регистрируем на сервере
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    NSString *url = @"http://cityplace.softgears.ru/mobile-api/";
+    NSString *url = @"http://cityplace.softgears.ru/mobile-api/register-device";
     NSInteger cityId = [self getCityId];
     NSDictionary *p = @{@"platform": [NSNumber numberWithInt:1], @"token":token, @"cityId": [NSNumber numberWithInt:cityId]};
     [manager GET:url parameters:p success:^(AFHTTPRequestOperation *operation, id responseObject) {

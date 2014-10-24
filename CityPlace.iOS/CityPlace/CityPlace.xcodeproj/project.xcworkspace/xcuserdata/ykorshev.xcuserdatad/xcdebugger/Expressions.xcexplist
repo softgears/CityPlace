@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[EventDetailsViewController viewDidLayoutSubviews]:EventDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.whereButton.frame.origin.y">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

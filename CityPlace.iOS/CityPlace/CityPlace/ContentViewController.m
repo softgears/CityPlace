@@ -41,7 +41,7 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 90, 0);
+    //self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 90, 0);
     
     NSString *url = [NSString stringWithFormat:@"http://cityplace.softgears.ru/mobile-api/home-data/%ld",(long)[self getCityId]];
     [self getJsonFromUrl:url success:^(id object){
