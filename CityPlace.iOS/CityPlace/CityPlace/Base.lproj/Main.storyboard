@@ -582,7 +582,7 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cAH-oS-Pbr">
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="51" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ai5-oC-Sgf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="51" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ai5-oC-Sgf">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1010,7 +1010,6 @@
                                     <constraint firstItem="XyQ-cz-k06" firstAttribute="top" secondItem="4eB-sA-wZn" secondAttribute="bottom" constant="13" id="8qw-MD-Jsk"/>
                                     <constraint firstItem="0Qc-GZ-Xmb" firstAttribute="top" secondItem="b6y-Bn-wNh" secondAttribute="bottom" constant="8" id="DMi-er-02d"/>
                                     <constraint firstItem="aDa-Wz-8qm" firstAttribute="leading" secondItem="7L4-16-75e" secondAttribute="leading" id="HTI-BO-yIg"/>
-                                    <constraint firstAttribute="centerX" secondItem="4eB-sA-wZn" secondAttribute="centerX" constant="2" id="HgH-IF-F9W"/>
                                     <constraint firstAttribute="trailing" secondItem="4eB-sA-wZn" secondAttribute="trailing" constant="4" id="JPJ-6j-5Qi"/>
                                     <constraint firstAttribute="bottom" secondItem="aDa-Wz-8qm" secondAttribute="bottom" constant="45" id="KAo-ZP-FwA"/>
                                     <constraint firstItem="aDa-Wz-8qm" firstAttribute="top" secondItem="0Qc-GZ-Xmb" secondAttribute="bottom" constant="20" id="WM7-vf-f2g"/>
@@ -1343,7 +1342,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LRU-fz-Q6b"/>
+        <segue reference="37O-59-7sF"/>
         <segue reference="3YQ-Ku-5vh"/>
         <segue reference="I9T-SN-bHR"/>
     </inferredMetricsTieBreakers>

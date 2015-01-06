@@ -37,11 +37,17 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     NSString *url = @"http://cityplace.softgears.ru/mobile-api/register-device";
+    NSString *oldToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"currentToken"];
+    if (oldToken == nil){
+        oldToken = @"";
+    }
     NSInteger cityId = [self getCityId];
-    NSDictionary *p = @{@"platform": [NSNumber numberWithInt:1], @"token":token, @"cityId": [NSNumber numberWithInt:cityId]};
+    NSDictionary *p = @{@"platform": [NSNumber numberWithInt:1], @"old": oldToken, @"token":token, @"cityId": [NSNumber numberWithInt:cityId]};
     [manager GET:url parameters:p success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         NSLog(@"Зарегистрировались на сервере: %@", responseObject);
+        [[NSUserDefaults standardUserDefaults] setValue:token forKey:@"currentToken"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         NSLog(@"Error: %@", error);
